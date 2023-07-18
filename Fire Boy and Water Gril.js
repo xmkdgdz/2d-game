@@ -21,16 +21,24 @@ init_unity_academy_2d();
 
 
 // Load custom sprite from URL (Need CORS Cross-Domain header)
-// const mario = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario.png");
-// const ground = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-// const ground1 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-// const ground2 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-// const wall1 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-// const wall2 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-// const slope = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-// const mystery_box = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mystery_box.png");
+const boy = instantiate_sprite();
+const girl = instantiate_sprite(); 
 
 const main_cam_target = get_main_camera_following_target();
+
+
+//start
+function start_boy(gameObject){
+    set_position(gameObject, -2, 2, 0);
+    set_scale(gameObject, 0.5, 0.5, 1);
+    apply_rigidbody(gameObject);
+}
+
+function start_girl(gameObject){
+    set_position(gameObject, -2, 2, 0);
+    set_scale(gameObject, 0.5, 0.5, 1);
+    apply_rigidbody(gameObject);
+}
 
 
 //Player move
@@ -83,16 +91,6 @@ function update_girl(gameObject){
 
 
 
-
-// function start_player(gameObject){
-//     set_position(gameObject, -2, 2, 0);
-//     set_scale(gameObject, 0.5, 0.5, 1);
-//     apply_rigidbody(gameObject);
-// }
-
-
-
-
 // const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
 // const start_ground1 = (gameObject) => set_position(gameObject, 3, -1, 0);
 // const start_ground2 = (gameObject) => set_position(gameObject, 6, 0, 0);
@@ -119,7 +117,6 @@ function update_girl(gameObject){
 //     set_position(gameObject, 1, 2.5, 0);
 //     apply_rigidbody(gameObject);
 // };
-
 
 
 
@@ -172,6 +169,13 @@ function update_girl(gameObject){
 //         mushroom = null;
 //     }
 // }
+
+//start
+set_start(boy,);
+set_start(girl,);
+set_update(boy,update_boy);
+set_update(girl,update_girl);
+
 
 // set_start(ground, start_ground);
 // set_start(ground1, start_ground1);
