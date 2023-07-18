@@ -1,4 +1,4 @@
-// Unity Academy 2D Simple Platformer Game Demo
+// 2D game : Fire Boy and Water Gril
 //
 // A and D: Walk left and right
 // W: Jump
