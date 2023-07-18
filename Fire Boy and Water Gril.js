@@ -19,6 +19,66 @@ get_main_camera_following_target } from "unity_academy";
 
 init_unity_academy_2d();
 
+
+
+//Player move
+function update_boy(gameObject){
+    
+    const moveSpeed = 3;
+    
+    // Player: move and jump
+    if(get_key("A")){
+        translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
+    }
+    if(get_key("D")){
+        translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
+    }
+    if(get_key("W") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
+        add_impulse_force(gameObject, 0, 5, 0);
+    }
+
+    set_rotation_euler(gameObject, 0, 0, 0);
+    
+    copy_position(gameObject, main_cam_target, 0, 0, Infinity);
+}
+
+function update_girl(gameObject){
+    
+    const moveSpeed = 3;
+    
+    // Player: move and jump
+    if(get_key("4")){
+        translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
+    }
+    if(get_key("6")){
+        translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
+    }
+    if(get_key("8") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
+        add_impulse_force(gameObject, 0, 5, 0);
+    }
+
+    set_rotation_euler(gameObject, 0, 0, 0);
+    
+    copy_position(gameObject, main_cam_target, 0, 0, Infinity);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // Load custom sprite from URL (Need CORS Cross-Domain header)
 // const mario = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario.png");
 // const ground = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
@@ -70,6 +130,16 @@ const main_cam_target = get_main_camera_following_target();
 //     apply_rigidbody(gameObject);
 // };
 
+
+
+
+
+
+
+
+
+
+
 // const update_mushroom = (gameObject) =>{
     
 //     const deltaX = get_position(gameObject)[0] - get_position(mario)[0];
@@ -89,45 +159,7 @@ const main_cam_target = get_main_camera_following_target();
 //     set_rotation_euler(gameObject, 0, 0, 0);
 // };
 
-function update_boy(gameObject){
-    
-    const moveSpeed = 3;
-    
-    // Player: move and jump
-    if(get_key("A")){
-        translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
-    }
-    if(get_key("D")){
-        translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
-    }
-    if(get_key("W") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
-        add_impulse_force(gameObject, 0, 5, 0);
-    }
 
-    set_rotation_euler(gameObject, 0, 0, 0);
-    
-    copy_position(gameObject, main_cam_target, 0, 0, Infinity);
-}
-
-function update_girl(gameObject){
-    
-    const moveSpeed = 3;
-    
-    // Player: move and jump
-    if(get_key("4")){
-        translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
-    }
-    if(get_key("6")){
-        translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
-    }
-    if(get_key("8") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
-        add_impulse_force(gameObject, 0, 5, 0);
-    }
-
-    set_rotation_euler(gameObject, 0, 0, 0);
-    
-    copy_position(gameObject, main_cam_target, 0, 0, Infinity);
-}
 
 
 
