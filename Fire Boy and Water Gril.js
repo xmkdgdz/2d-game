@@ -21,7 +21,7 @@ init_unity_academy_2d();
 
 
 // Load custom sprite from URL (Need CORS Cross-Domain header)
-const boy = instantiate_sprite();
+const boy = instantiate_sprite("http://m.qpic.cn/psc?/V52eI0oH0CUkyw36rfLR0IfOWr1V5Epa/ruAMsa53pVQWN7FLK88i5ttYzMQESU1LJRxTLbu32nft0NpZuNAhWPVJQvZUdk4rCjVcsJ4WdSR8x7Mb9Xw5qNzuA88.VTzCzoMdoMvMnRg!/mnull&bo=yAEOA8cBDQMHByo!&rf=photolist&t=5");
 const girl = instantiate_sprite(); 
 
 const main_cam_target = get_main_camera_following_target();
@@ -171,10 +171,10 @@ function update_girl(gameObject){
 // }
 
 //start
-set_start(boy,);
-set_start(girl,);
+set_start(boy,start_boy);
+//set_start(girl,start_girl);
 set_update(boy,update_boy);
-set_update(girl,update_girl);
+//set_update(girl,update_girl);
 
 
 // set_start(ground, start_ground);
