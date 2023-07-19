@@ -180,8 +180,9 @@ function start_ground(gameObject){
 //start
 set_start(boy,start_boy);
 set_start(girl,start_girl);
-set_update(girl,update_girl);
 set_update(boy,update_boy);
+set_update(girl,update_girl);
+
 
 
 set_start(background,start_background);
