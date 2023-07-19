@@ -48,7 +48,7 @@ set_start(ground4,start_ground4);
 
 //start special map
 const wall1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall1=(gameObject) => {set_position(gameObject, 0, -5, 0);set_scale(gameObject,2,1,0);};
+const start_wall1=(gameObject) => {set_position(gameObject, 0, -4, 0);set_scale(gameObject,2,1,0);};
 set_start(wall1,start_wall1);
 
 
