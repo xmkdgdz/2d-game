@@ -31,7 +31,7 @@ import {init_unity_academy_3d, init_unity_academy_2d, set_start, set_update,
     
     function start_background(gameObject) {
         remove_collider_components(gameObject);
-        set_position(gameObject, 0, 0, 0);
+        set_position(gameObject, 0, 0, 1);
         set_scale(gameObject,2,2,0);
     }
     
@@ -47,14 +47,14 @@ import {init_unity_academy_3d, init_unity_academy_2d, set_start, set_update,
     set_start(ground4,start_ground4);
     
     //start special map
+    const 
     
     
     
     
     
     
-    
-    //OBJECT
+    //INTERACTION
     
     
     
