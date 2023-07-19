@@ -21,10 +21,10 @@ init_unity_academy_2d();
 
 
 // Load custom sprite from URL (Need CORS Cross-Domain header)
-const boy = instantiate_sprite('https://n.7k7kimg.cn/m00/16/e3/def6308e2338b4da56b2e2cb8156469b.jpg');
+const boy = instantiate_sprite('http://m.qpic.cn/psc?/V52eI0oH0CUkyw36rfLR0IfOWr1V5Epa/ruAMsa53pVQWN7FLK88i5ttYzMQESU1LJRxTLbu32nft0NpZuNAhWPVJQvZUdk4rCjVcsJ4WdSR8x7Mb9Xw5qNzuA88.VTzCzoMdoMvMnRg!/mnull&bo=yAEOA8cBDQMHByo!&rf=photolist&t=5');
 const girl = instantiate_sprite('http://m.qpic.cn/psc?/V52eI0oH0CUkyw36rfLR0IfOWr1V5Epa/ruAMsa53pVQWN7FLK88i5s.fKZoFlexCts*1as*WcMmwedt82uXHBfH3yJQY*UbErDKaFkWTQj6OVnS*ESP7ACGqynRmTdR5oWy5xJ1Jv*w!/mnull&bo=RALHAUQCxwEDByI!&rf=photolist&t=5'); 
 const background=instantiate_sprite('http://m.qpic.cn/psc?/V52eI0oH0CUkyw36rfLR0IfOWr1V5Epa/ruAMsa53pVQWN7FLK88i5oWbj5P7Ih3uEE13.MQanvyC7HWJgcUGfKEtrBd957DWQ*ohTEA.XPPkZPm1q3KML6UShuhy8mzQ.aTQOn97Nkc!/mnull&bo=OAQ4BAAQABAHByY!&rf=photolist&t=5');
-//const ground=
+const ground=
 
 const main_cam_target = get_main_camera_following_target();
 
@@ -183,7 +183,7 @@ set_update(boy,update_boy);
 set_update(girl,update_girl);
 
 set_start(background,start_background);
-//set_start(ground,start_ground);
+set_start(ground,start_ground);
 
 // set_start(ground, start_ground);
 // set_start(ground1, start_ground1);
