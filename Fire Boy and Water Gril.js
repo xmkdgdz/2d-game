@@ -41,52 +41,14 @@ function start_background(gameObject) {
 
 const start_ground1 = (gameObject) => {set_position(gameObject, 0, -5, 0);set_scale(gameObject,2,1,0);};
 const start_ground2 = (gameObject) => {set_position(gameObject, 0, 5, 0);set_scale(gameObject,2,1,0);};
-const start_ground3 = (gameObject) => {set_position(gameObject, -5, 0, 0);set_scale(gameObject,1,2,0);};
-const start_ground4 = (gameObject) => {set_position(gameObject, 5, 0, 0);set_scale(gameObject,1,2,0);};
+const start_ground3 = (gameObject) => {set_position(gameObject, -10, 0, 0);set_scale(gameObject,1,2,0);};
+const start_ground4 = (gameObject) => {set_position(gameObject, 10, 0, 0);set_scale(gameObject,1,2,0);};
 
 set_start(background,start_background);
 set_start(ground1,start_ground1);
 set_start(ground2,start_ground2);
 set_start(ground3,start_ground3);
 set_start(ground4,start_ground4);
-
-
-// const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
-// const start_ground1 = (gameObject) => set_position(gameObject, 3, -1, 0);
-// const start_ground2 = (gameObject) => set_position(gameObject, 6, 0, 0);
-// const start_wall1 = (gameObject) => {
-//     set_position(gameObject, -6, 1.8, 0);
-//     set_rotation_euler(gameObject, 0, 0, 90);
-// };
-// const start_wall2 = (gameObject) => {
-//     set_position(gameObject, 8.75, 1.6, 0);
-//     set_rotation_euler(gameObject, 0, 0, 90);
-// };
-
-
-// const start_slope = (gameObject) =>{
-//     set_position(gameObject, -4, -1, 0);
-//     set_rotation_euler(gameObject, 0, 0, -10);
-// };
-
-// const start_mystery_box = (gameObject) =>{
-//     set_position(gameObject, 1, 1.5, 0);
-// };
-
-// const start_mushroom = (gameObject) =>{
-//     set_position(gameObject, 1, 2.5, 0);
-//     apply_rigidbody(gameObject);
-// };
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -148,6 +110,48 @@ set_start(boy,start_player);
 set_start(girl,start_player);
 set_update(boy,update_boy);
 set_update(girl,update_girl);
+
+
+
+// const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
+// const start_ground1 = (gameObject) => set_position(gameObject, 3, -1, 0);
+// const start_ground2 = (gameObject) => set_position(gameObject, 6, 0, 0);
+// const start_wall1 = (gameObject) => {
+//     set_position(gameObject, -6, 1.8, 0);
+//     set_rotation_euler(gameObject, 0, 0, 90);
+// };
+// const start_wall2 = (gameObject) => {
+//     set_position(gameObject, 8.75, 1.6, 0);
+//     set_rotation_euler(gameObject, 0, 0, 90);
+// };
+
+
+// const start_slope = (gameObject) =>{
+//     set_position(gameObject, -4, -1, 0);
+//     set_rotation_euler(gameObject, 0, 0, -10);
+// };
+
+// const start_mystery_box = (gameObject) =>{
+//     set_position(gameObject, 1, 1.5, 0);
+// };
+
+// const start_mushroom = (gameObject) =>{
+//     set_position(gameObject, 1, 2.5, 0);
+//     apply_rigidbody(gameObject);
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
