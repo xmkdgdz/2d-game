@@ -30,8 +30,8 @@ init_unity_academy_2d();
 const background=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/background.png');
 const ground1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
 const ground2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
-const ground3=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
-const ground4=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
+const ground3=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground2.png');
+const ground4=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground2.png');
 
 function start_background(gameObject) {
     remove_collider_components(gameObject);
@@ -39,12 +39,16 @@ function start_background(gameObject) {
     set_scale(gameObject,2,2,0);
 }
 
-function start_ground(gameObject){
-    set_position(gameObject, -2, -2, 0);
+const start_ground1 = (gameObject) => {set_position(gameObject, 0, -5, 0);set_scale(gameObject,2,1,0);};
+const start_ground2 = (gameObject) => {set_position(gameObject, 0, 5, 0);set_scale(gameObject,2,1,0);};
+const start_ground3 = (gameObject) => {set_position(gameObject, -5, 0, 0);set_scale(gameObject,1,2,0);};
+const start_ground4 = (gameObject) => {set_position(gameObject, 5, 0, 0);set_scale(gameObject,1,2,0);};
 
-}
-
-start_ground(ground1);
+set_start(background,start_background);
+set_start(ground1,start_ground1);
+set_start(ground2,start_ground2);
+set_start(ground3,start_ground3);
+set_start(ground4,start_ground4);
 
 
 // const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
@@ -84,8 +88,7 @@ start_ground(ground1);
 
 
 
-set_start(background,start_background);
-set_start(ground1,start_ground);
+
 
 
 //PLAYER
