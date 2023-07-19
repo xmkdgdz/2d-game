@@ -30,7 +30,7 @@ const ground=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-ga
 const main_cam_target = get_main_camera_following_target();
 
 
-//start
+//start player
 function start_boy(gameObject){
     set_position(gameObject, -2, 2, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
@@ -86,7 +86,7 @@ function update_girl(gameObject){
 }
 
 
-
+//start basic map
 const start_background=(gameObject) => set_position(gameObject, 0, -2, -1);
 
 function start_ground(gameObject){
