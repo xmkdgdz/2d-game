@@ -47,14 +47,14 @@ set_start(ground3,start_ground3);
 set_start(ground4,start_ground4);
 
 //start special map
+const 
 
 
 
 
 
 
-
-//OBJECT
+//INTERACTION
 
 
 
