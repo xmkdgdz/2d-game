@@ -20,11 +20,12 @@ get_main_camera_following_target } from "unity_academy";
 init_unity_academy_2d();
 
 
+
 // Load custom sprite from URL (Need CORS Cross-Domain header)
-const boy = instantiate_sprite('https://github.com/xmkdgdz/2d-game/blob/main/images/boy.png');
-const girl = instantiate_sprite('https://github.com/xmkdgdz/2d-game/blob/main/images/girl.png'); 
-const background=instantiate_sprite('https://github.com/xmkdgdz/2d-game/blob/main/images/background.png');
-const ground=instantiate_sprite('https://github.com/xmkdgdz/2d-game/blob/main/images/ground.png');
+const boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
+const girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
+const background=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/background.png');
+const ground=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground.png');
 
 const main_cam_target = get_main_camera_following_target();
 
