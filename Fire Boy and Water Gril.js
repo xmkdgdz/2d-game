@@ -15,85 +15,36 @@ get_scale, set_scale, play_animator_state, add_impulse_force,
 apply_rigidbody, get_angular_velocity, get_mass, get_velocity,
 set_angular_velocity, set_mass, set_use_gravity ,set_velocity,
 on_collision_enter, on_collision_stay, on_collision_exit,
-get_main_camera_following_target } from "unity_academy";
+get_main_camera_following_target,remove_collider_components } from "unity_academy";
 
 init_unity_academy_2d();
 
 
 
-// Load custom sprite from URL (Need CORS Cross-Domain header)
-const boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
-const girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
-const background=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/background.png');
-const ground=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground.png');
 
 const main_cam_target = get_main_camera_following_target();
 
 
-//start player
-function start_boy(gameObject){
-    set_position(gameObject, -2, 2, 0);
-    set_scale(gameObject, 0.5, 0.5, 1);
-    apply_rigidbody(gameObject);
-}
-
-function start_girl(gameObject){
-    set_position(gameObject, -2, 2, 0);
-    set_scale(gameObject, 0.5, 0.5, 1);
-    apply_rigidbody(gameObject);
-}
-
-
-//Player move
-function update_boy(gameObject){
-    
-    const moveSpeed = 3;
-    
-    // Player: move and jump
-    if(get_key("A")){
-        translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
-    }
-    if(get_key("D")){
-        translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
-    }
-    if(get_key("W") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
-        add_impulse_force(gameObject, 0, 5, 0);
-    }
-
-    set_rotation_euler(gameObject, 0, 0, 0);
-    
-    copy_position(gameObject, main_cam_target, 0, 0, Infinity);
-}
-
-function update_girl(gameObject){
-    
-    const moveSpeed = 3;
-    
-    // Player: move and jump
-    if(get_key("J")){
-        translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
-    }
-    if(get_key("L")){
-        translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
-    }
-    if(get_key("I") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
-        add_impulse_force(gameObject, 0, 5, 0);
-    }
-
-    set_rotation_euler(gameObject, 0, 0, 0);
-    
-    copy_position(gameObject, main_cam_target, 0, 0, Infinity);
-}
-
 
 //start basic map
-const start_background=(gameObject) => set_position(gameObject, 0, -2, -1);
+const background=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/background.png');
+const ground1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
+const ground2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
+const ground3=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
+const ground4=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
 
-function start_ground(gameObject){
-    set_position(gameObject, 0, -2, 0);
+function start_background(gameObject) {
+    remove_collider_components(gameObject);
+    set_position(gameObject, 0, 0, 0);
+    set_scale(gameObject,2,2,0);
 }
 
+function start_ground(gameObject){
+    set_position(gameObject, -2, 0, 0);
 
+}
+
+start_ground(ground1);
 
 
 // const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
@@ -132,59 +83,70 @@ function start_ground(gameObject){
 
 
 
-// const update_mushroom = (gameObject) =>{
+
+set_start(background,start_background);
+set_start(ground1,start_ground);
+
+
+//PLAYER
+
+
+const boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
+const girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
+
+//start player
+function start_player(gameObject){
+    set_position(gameObject, 0, 0, 0);
+    set_scale(gameObject, 0.5, 0.5, 1);
+    apply_rigidbody(gameObject);
+}
+
+//player move
+function update_boy(gameObject){
     
-//     const deltaX = get_position(gameObject)[0] - get_position(mario)[0];
-//     const deltaY = get_position(gameObject)[1] - get_position(mario)[1];
+    const moveSpeed = 3;
     
-//     // Let the mushroom chase the player
-//     if(deltaX > 0){
-//         translate_world(gameObject, -delta_time(), 0, 0);
-//     }
-//     else{
-//         translate_world(gameObject, delta_time(), 0, 0);
-//     }
-//     if(deltaY < -0.1 && math_abs(get_velocity(gameObject)[1]) <= 0.05){
-//         add_impulse_force(gameObject, 0, 5, 0);
-//     }
+    // Player: move and jump
+    if(get_key("A")){
+        translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
+    }
+    if(get_key("D")){
+        translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
+    }
+    if(get_key("W") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
+        add_impulse_force(gameObject, 0, 5, 0);
+    }
+
+    set_rotation_euler(gameObject, 0, 0, 0);
     
-//     set_rotation_euler(gameObject, 0, 0, 0);
-// };
-
-
-
-
-
-
-// let mushroom = null;
-
-// function marioOnCollisionEnter(self, other){
+    copy_position(gameObject, main_cam_target, 0, 0, Infinity);
+}
+function update_girl(gameObject){
     
-//     // When player touches the mystery box, spawn the mushroom above the box
-//     if(same_gameobject(other, mystery_box) && is_null(mushroom)){
-//         mushroom = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mushroom.png");
-//         set_start(mushroom, start_mushroom);
-//         set_update(mushroom, update_mushroom);
-//     }
+    const moveSpeed = 3;
     
-//     // When player touches the mushroom, remove the mushroom and send player back to the start position
-//     if(same_gameobject(other, mushroom)){
-//         set_position(self, -2, 2, 0);
-//         destroy(mushroom);
-//         mushroom = null;
-//     }
-// }
+    // Player: move and jump
+    if(get_key("J")){
+        translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
+    }
+    if(get_key("L")){
+        translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
+    }
+    if(get_key("I") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
+        add_impulse_force(gameObject, 0, 5, 0);
+    }
 
-//start
-set_start(boy,start_boy);
-set_start(girl,start_girl);
+    set_rotation_euler(gameObject, 0, 0, 0);
+    
+    copy_position(gameObject, main_cam_target, 0, 0, Infinity);
+}
+
+set_start(boy,start_player);
+set_start(girl,start_player);
 set_update(boy,update_boy);
 set_update(girl,update_girl);
 
 
-
-//set_start(background,start_background);
-set_start(ground,start_ground);
 
 // set_start(ground, start_ground);
 // set_start(ground1, start_ground1);
