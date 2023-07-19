@@ -21,10 +21,10 @@ init_unity_academy_2d();
 
 
 // Load custom sprite from URL (Need CORS Cross-Domain header)
-const boy = instantiate_sprite('http://m.qpic.cn/psc?/V52eI0oH0CUkyw36rfLR0IfOWr1V5Epa/ruAMsa53pVQWN7FLK88i5ttYzMQESU1LJRxTLbu32nft0NpZuNAhWPVJQvZUdk4rCjVcsJ4WdSR8x7Mb9Xw5qNzuA88.VTzCzoMdoMvMnRg!/mnull&bo=yAEOA8cBDQMHByo!&rf=photolist&t=5');
+const boy = instantiate_sprite('https://i0.hdslb.com/bfs/new_dyn/7293e64df3db45f8ef17b40f17bb8469293086183.webp@1048w_!web-dynamic.avif');
 const girl = instantiate_sprite('http://m.qpic.cn/psc?/V52eI0oH0CUkyw36rfLR0IfOWr1V5Epa/ruAMsa53pVQWN7FLK88i5s.fKZoFlexCts*1as*WcMmwedt82uXHBfH3yJQY*UbErDKaFkWTQj6OVnS*ESP7ACGqynRmTdR5oWy5xJ1Jv*w!/mnull&bo=RALHAUQCxwEDByI!&rf=photolist&t=5'); 
 const background=instantiate_sprite('http://m.qpic.cn/psc?/V52eI0oH0CUkyw36rfLR0IfOWr1V5Epa/ruAMsa53pVQWN7FLK88i5oWbj5P7Ih3uEE13.MQanvyC7HWJgcUGfKEtrBd957DWQ*ohTEA.XPPkZPm1q3KML6UShuhy8mzQ.aTQOn97Nkc!/mnull&bo=OAQ4BAAQABAHByY!&rf=photolist&t=5');
-
+//const ground=
 
 const main_cam_target = get_main_camera_following_target();
 
@@ -86,9 +86,13 @@ function update_girl(gameObject){
 
 
 
-const start_background=(gameObject) => set_position(gameObject, 0, -2, 0);
+const start_background=(gameObject) => set_position(gameObject, 0, -2, -1);
 
-
+function start_ground(gameObject){
+    set_position(gameObject, 0, -2, 0);
+    set_position(gameObject, 3, -1, 0);
+    set_position(gameObject, 3, -1, 0);
+}
 
 
 
@@ -179,6 +183,7 @@ set_update(boy,update_boy);
 set_update(girl,update_girl);
 
 set_start(background,start_background);
+//set_start(ground,start_ground);
 
 // set_start(ground, start_ground);
 // set_start(ground1, start_ground1);
