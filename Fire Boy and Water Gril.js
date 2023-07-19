@@ -20,11 +20,7 @@ get_main_camera_following_target,remove_collider_components } from "unity_academ
 init_unity_academy_2d();
 
 
-
-
-//const main_cam_target = get_main_camera_following_target();
-
-
+//MAP
 
 //start basic map
 const background=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/background.png');
@@ -50,6 +46,16 @@ set_start(ground2,start_ground2);
 set_start(ground3,start_ground3);
 set_start(ground4,start_ground4);
 
+//start special map
+
+
+
+
+
+
+
+//OBJECT
+
 
 
 
@@ -61,7 +67,7 @@ const girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-ga
 
 //start player
 function start_player(gameObject){
-    set_position(gameObject, 0, 0, 0);
+    set_position(gameObject, -9, -4, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
     apply_rigidbody(gameObject);
 }
