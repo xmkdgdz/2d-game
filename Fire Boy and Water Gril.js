@@ -31,7 +31,7 @@ const ground4=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-g
 
 function start_background(gameObject) {
     remove_collider_components(gameObject);
-    set_position(gameObject, 0, 0, 0);
+    set_position(gameObject, 0, 0, 1);
     set_scale(gameObject,2,2,0);
 }
 
