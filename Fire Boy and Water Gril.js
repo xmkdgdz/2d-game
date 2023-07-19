@@ -22,7 +22,7 @@ init_unity_academy_2d();
 
 
 
-const main_cam_target = get_main_camera_following_target();
+//const main_cam_target = get_main_camera_following_target();
 
 
 
@@ -119,7 +119,7 @@ function update_boy(gameObject){
 
     set_rotation_euler(gameObject, 0, 0, 0);
     
-    copy_position(gameObject, main_cam_target, 0, 0, Infinity);
+    
 }
 function update_girl(gameObject){
     
@@ -138,7 +138,7 @@ function update_girl(gameObject){
 
     set_rotation_euler(gameObject, 0, 0, 0);
     
-    copy_position(gameObject, main_cam_target, 0, 0, Infinity);
+    
 }
 
 set_start(boy,start_player);
