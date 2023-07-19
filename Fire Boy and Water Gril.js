@@ -40,7 +40,7 @@ function start_background(gameObject) {
 }
 
 function start_ground(gameObject){
-    set_position(gameObject, -2, 0, 0);
+    set_position(gameObject, -2, -2, 0);
 
 }
 
