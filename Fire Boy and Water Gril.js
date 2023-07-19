@@ -91,8 +91,6 @@ const start_background=(gameObject) => set_position(gameObject, 0, -2, -1);
 
 function start_ground(gameObject){
     set_position(gameObject, 0, -2, 0);
-    set_position(gameObject, 3, -1, 0);
-    set_position(gameObject, 3, -1, 0);
 }
 
 
@@ -185,7 +183,7 @@ set_update(girl,update_girl);
 
 
 
-set_start(background,start_background);
+//set_start(background,start_background);
 set_start(ground,start_ground);
 
 // set_start(ground, start_ground);
