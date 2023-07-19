@@ -2,8 +2,8 @@
 //
 // Fire Boy:A and D: Walk left and right
 //          W: Jump
-//Water Girl:4 and 6:Walk left and right
-//           8: Jump
+//Water Girl:J and L:Walk left and right
+//           I: Jump
 
 
 
@@ -70,13 +70,13 @@ function update_girl(gameObject){
     const moveSpeed = 3;
     
     // Player: move and jump
-    if(get_key("4")){
+    if(get_key("J")){
         translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
     }
-    if(get_key("6")){
+    if(get_key("L")){
         translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
     }
-    if(get_key("8") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
+    if(get_key("I") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
         add_impulse_force(gameObject, 0, 5, 0);
     }
 
@@ -180,8 +180,9 @@ function start_ground(gameObject){
 //start
 set_start(boy,start_boy);
 set_start(girl,start_girl);
-set_update(boy,update_boy);
 set_update(girl,update_girl);
+set_update(boy,update_boy);
+
 
 set_start(background,start_background);
 set_start(ground,start_ground);
