@@ -48,7 +48,7 @@ set_start(ground4,start_ground4);
 
 //start special map
 const wall1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall1=(gameObject) => {set_position(gameObject, 5, -3.5, 0);set_scale(gameObject,1,0.3,0);};
+const start_wall1=(gameObject) => {set_position(gameObject, 6, -3.5, 0);set_scale(gameObject,2,1,0);};
 set_start(wall1,start_wall1);
 
 const water=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/water.png');
@@ -56,19 +56,19 @@ const start_water=(gameObject) => {set_position(gameObject, 0, -2.2, 0);set_scal
 set_start(water,start_water);
 
 const wall2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall2=(gameObject) => {set_position(gameObject, -5.3, -2, 0);set_scale(gameObject,0.3,1.1,0);};
+const start_wall2=(gameObject) => {set_position(gameObject, -5, -1.8, 0);set_scale(gameObject,0.5,3,0);};
 set_start(wall2,start_wall2);
 
 const wall3=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall3=(gameObject) => {set_position(gameObject, -1, -0.2, 0);set_scale(gameObject,0.2,0.3,0);};
+const start_wall3=(gameObject) => {set_position(gameObject, -1, -0.2, 0);set_scale(gameObject,0.5,1,0);};
 set_start(wall3,start_wall3);
 
 const wall4=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall4=(gameObject) => {set_position(gameObject, 3, -0.2, 0);set_scale(gameObject,0.2,0.3,0);};
+const start_wall4=(gameObject) => {set_position(gameObject, 3, -0.2, 0);set_scale(gameObject,0.5,1,0);};
 set_start(wall4,start_wall4);
 
 const wall5=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall5=(gameObject) => {set_position(gameObject, 7.6, 1.2, 0);set_scale(gameObject,0.5,0.3,0);};
+const start_wall5=(gameObject) => {set_position(gameObject, 7.4, 1.2, 0);set_scale(gameObject,1.5,1,0);};
 set_start(wall5,start_wall5);
 
 
