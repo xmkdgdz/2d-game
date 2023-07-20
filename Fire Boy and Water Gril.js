@@ -17,7 +17,7 @@ set_angular_velocity, set_mass, set_use_gravity ,set_velocity,
 on_collision_enter, on_collision_stay, on_collision_exit,
 get_main_camera_following_target,remove_collider_components } from "unity_academy";
 
-import { create_audio, play_audio,loop_audio} from "arcade_2d";
+import { create_audio, play_audio,loop_audio,build_game } from "arcade_2d";
 
 
 init_unity_academy_2d();
@@ -173,6 +173,7 @@ function blue_touch(self,other){
 on_collision_enter(girl,red_touch);
 on_collision_enter(boy,blue_touch);
 
-const general_bg_audio = loop_audio(create_audio("https://raw.githubusercontent.com/lv0senku/Fireboy-and-Watergirl/master/assets/audio/LevelMusic.mp3", 0.5));  
+const general_bg_audio = loop_audio(create_audio("https://raw.githubusercontent.com/lv0senku/Fireboy-and-Watergirl/master/assets/audio/LevelMusic.mp3", 0.5)); 
+build_game();
 
 
