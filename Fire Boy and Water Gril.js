@@ -113,13 +113,13 @@ function update_boy(gameObject){
     const moveSpeed = 3;
     
     // Player: move and jump
-    while(get_key("A")){
-        boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
+    if(get_key("A")){
+        //boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
         set_scale(boy, 0.5, 0.5, 1);
         translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
     }
-    while(get_key("D")){
-        boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyright.png');
+    if(get_key("D")){
+        //boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyright.png');
         set_scale(boy, 0.5, 0.5, 1);
         translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
         
