@@ -156,6 +156,7 @@ set_update(girl,update_girl);
 //INTERACTION
 function red_touch(self,other){
     if(same_gameobject(other, redwater)){
+        const fall_action = create_audio("https://raw.githubusercontent.com/lv0senku/Fireboy-and-Watergirl/master/assets/audio/Death.mp3", 1);
         set_position(self, -9, -4, 0);
     }
 }
@@ -167,5 +168,7 @@ function blue_touch(self,other){
 }
 on_collision_enter(girl,red_touch);
 on_collision_enter(boy,blue_touch);
+
+const general_bg_audio = loop_audio(create_audio("https://raw.githubusercontent.com/lv0senku/Fireboy-and-Watergirl/master/assets/audio/LevelMusic.mp3", 0.5));  
 
 
