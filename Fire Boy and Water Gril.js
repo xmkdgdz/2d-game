@@ -51,14 +51,17 @@ const wall1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-gam
 const start_wall1=(gameObject) => {set_position(gameObject, 6, -3.5, 0);set_scale(gameObject,2,1,0);};
 set_start(wall1,start_wall1);
 
-const bluewater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/bluewater.png');
-const start_bluewater=(gameObject) => {set_position(gameObject, 0, -2.2, -1);set_scale(gameObject,0.4,0.8,0);};
+const bluewater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/bluewater2.png');
+const start_bluewater=(gameObject) => {set_position(gameObject, 0, -2.1, -1);set_scale(gameObject,0.5,1,0);};
 set_start(bluewater,start_bluewater);
 
 const redwater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/redwater.png');
-const start_redwater=(gameObject) => {set_position(gameObject, -2.5, -2.2, -1);set_scale(gameObject,0.5,1,0);};
+const start_redwater=(gameObject) => {set_position(gameObject, -2.5, -2, -1);set_scale(gameObject,0.5,1,0);};
 set_start(redwater,start_redwater);
 
+const wall6=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
+const start_wall6=(gameObject) => {set_position(gameObject, -1.5, -2.3, 0);set_scale(gameObject,2,1,0);};
+set_start(wall6,start_wall6);
 
 const wall2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
 const start_wall2=(gameObject) => {set_position(gameObject, -5, -1.8, 0);set_scale(gameObject,0.5,3,0);};
