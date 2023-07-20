@@ -72,11 +72,11 @@ const start_wall5=(gameObject) => {set_position(gameObject, 7.4, 1.2, 0);set_sca
 set_start(wall5,start_wall5);
 
 const boydoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boydoor.png');
-const start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);};
+const start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
 set_start(boydoor,start_boydoor);
 
 const girldoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/girldoor.png');
-const start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 0);set_scale(gameObject,0.3,0.3,0);};
+const start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 0);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
 set_start(girldoor,start_girldoor);
 
 
@@ -142,58 +142,3 @@ set_start(boy,start_player);
 set_start(girl,start_player);
 set_update(boy,update_boy);
 set_update(girl,update_girl);
-
-
-
-// const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
-// const start_ground1 = (gameObject) => set_position(gameObject, 3, -1, 0);
-// const start_ground2 = (gameObject) => set_position(gameObject, 6, 0, 0);
-// const start_wall1 = (gameObject) => {
-//     set_position(gameObject, -6, 1.8, 0);
-//     set_rotation_euler(gameObject, 0, 0, 90);
-// };
-// const start_wall2 = (gameObject) => {
-//     set_position(gameObject, 8.75, 1.6, 0);
-//     set_rotation_euler(gameObject, 0, 0, 90);
-// };
-
-
-// const start_slope = (gameObject) =>{
-//     set_position(gameObject, -4, -1, 0);
-//     set_rotation_euler(gameObject, 0, 0, -10);
-// };
-
-// const start_mystery_box = (gameObject) =>{
-//     set_position(gameObject, 1, 1.5, 0);
-// };
-
-// const start_mushroom = (gameObject) =>{
-//     set_position(gameObject, 1, 2.5, 0);
-//     apply_rigidbody(gameObject);
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// set_start(ground, start_ground);
-// set_start(ground1, start_ground1);
-// set_start(ground2, start_ground2);
-// set_start(wall1, start_wall1);
-// set_start(wall2, start_wall2);
-// set_start(slope, start_slope);
-// set_start(mystery_box, start_mystery_box);
-// set_start(mario, start_player);
-// set_update(mario, update_player);
-// on_collision_enter(mario, marioOnCollisionEnter);
