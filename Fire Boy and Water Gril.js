@@ -48,7 +48,7 @@ set_start(ground4,start_ground4);
 
 //start special map
 const wall1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall1=(gameObject) => {set_position(gameObject, 6, -3.5, 0);set_scale(gameObject,2,1,0);};
+const start_wall1=(gameObject) => {set_position(gameObject, 6, -3.7, 0);set_scale(gameObject,2,1,0);};
 set_start(wall1,start_wall1);
 
 const bluewater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/bluewater2.png');
@@ -56,19 +56,20 @@ const start_bluewater=(gameObject) => {set_position(gameObject, 0, -2.1, -1);set
 set_start(bluewater,start_bluewater);
 
 const redwater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/redwater.png');
-const start_redwater=(gameObject) => {set_position(gameObject, -2.5, -2, -1);set_scale(gameObject,0.5,1,0);};
+const start_redwater=(gameObject) => {set_position(gameObject, -4, -2.1, -1);set_scale(gameObject,0.5,1,0);};
 set_start(redwater,start_redwater);
 
 const wall6=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall6=(gameObject) => {set_position(gameObject, -1.5, -2.3, 0);set_scale(gameObject,2,1,0);};
+const start_wall6=(gameObject) => {set_position(gameObject, -3, -2.3, 0);set_scale(gameObject,3,1,0);};
 set_start(wall6,start_wall6);
 
+function walls
 const wall2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall2=(gameObject) => {set_position(gameObject, -5, -1.8, 0);set_scale(gameObject,0.5,3,0);};
+const start_wall2=(gameObject) => {set_position(gameObject, -8, -1.8, 0);set_scale(gameObject,0.5,3,0);};
 set_start(wall2,start_wall2);
 
 const wall3=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall3=(gameObject) => {set_position(gameObject, -1, -0.2, 0);set_scale(gameObject,0.5,1,0);};
+const start_wall3=(gameObject) => {set_position(gameObject, -6, 0, 0);set_scale(gameObject,0.5,1,0);};
 set_start(wall3,start_wall3);
 
 const wall4=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
