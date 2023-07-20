@@ -154,10 +154,12 @@ set_update(girl,update_girl);
 
 
 //INTERACTION
-function red_touch(gameObject){
-    
+function red_touch(self,other){
+    if(same_gameobject(other, redwater)){
+        set_start(self,start_player);
+    }
 }
 
+on_collision_enter(girl,red_touch);
 
-on_collision_enter(boy,red_touch);
 
