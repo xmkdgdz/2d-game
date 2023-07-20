@@ -71,6 +71,13 @@ const wall5=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-gam
 const start_wall5=(gameObject) => {set_position(gameObject, 7.4, 1.2, 0);set_scale(gameObject,1.5,1,0);};
 set_start(wall5,start_wall5);
 
+const boydoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boydoor.png');
+const start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);};
+set_start(boydoor,start_boydoor);
+
+const girldoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/girldoor.png');
+const start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 0);set_scale(gameObject,0.3,0.3,0);};
+set_start(girldoor,start_girldoor);
 
 
 //INTERACTION
