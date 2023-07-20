@@ -85,7 +85,7 @@ const start_wall5=(gameObject) => {set_position(gameObject, 7.4, 1.2, 0);set_sca
 set_start(wall5,start_wall5);
 
 const boydoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boydoor.png');
-const start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+const start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 0);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
 set_start(boydoor,start_boydoor);
 
 const girldoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/girldoor.png');
@@ -167,13 +167,5 @@ function blue_touch(self,other){
 }
 on_collision_enter(girl,red_touch);
 on_collision_enter(boy,blue_touch);
-
-function boydoor_touch(self,other){
-    if(same_gameobject(other, boydoor)){
-        set_position(self, -9, -4, 0);
-    }
-}
-on_collision_enter(boy,boydoor_touch);
-
 
 
