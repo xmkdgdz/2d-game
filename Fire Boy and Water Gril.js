@@ -17,6 +17,9 @@ set_angular_velocity, set_mass, set_use_gravity ,set_velocity,
 on_collision_enter, on_collision_stay, on_collision_exit,
 get_main_camera_following_target,remove_collider_components } from "unity_academy";
 
+import { create_audio, play_audio, } from "arcade_2d";
+
+
 init_unity_academy_2d();
 
 
