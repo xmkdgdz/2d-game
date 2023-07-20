@@ -52,11 +52,11 @@ const start_wall1=(gameObject) => {set_position(gameObject, 6, -3.7, 0);set_scal
 set_start(wall1,start_wall1);
 
 const bluewater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/bluewater2.png');
-const start_bluewater=(gameObject) => {set_position(gameObject, 0, -2.1, -1);set_scale(gameObject,0.5,1,0);};
+const start_bluewater=(gameObject) => {set_position(gameObject, 0, -2.1, -1);set_scale(gameObject,0.4,1,0);};
 set_start(bluewater,start_bluewater);
 
 const redwater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/redwater.png');
-const start_redwater=(gameObject) => {set_position(gameObject, -4, -2.1, -1);set_scale(gameObject,0.5,1,0);};
+const start_redwater=(gameObject) => {set_position(gameObject, -4, -2.1, -1);set_scale(gameObject,0.4,1,0);};
 set_start(redwater,start_redwater);
 
 const wall6=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
@@ -167,5 +167,6 @@ function blue_touch(self,other){
 }
 on_collision_enter(girl,red_touch);
 on_collision_enter(boy,blue_touch);
+
 
 
