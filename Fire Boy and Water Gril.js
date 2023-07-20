@@ -156,10 +156,16 @@ set_update(girl,update_girl);
 //INTERACTION
 function red_touch(self,other){
     if(same_gameobject(other, redwater)){
-        set_start(self,start_player);
+        set_position(self, -9, -4, 0);
     }
 }
 
+function blue_touch(self,other){
+    if(same_gameobject(other, bluewater)){
+        set_position(self, -9, -4, 0);
+    }
+}
 on_collision_enter(girl,red_touch);
+on_collision_enter(boy,blue_touch);
 
 
