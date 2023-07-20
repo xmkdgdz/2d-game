@@ -97,8 +97,8 @@ set_start(girldoor,start_girldoor);
 //PLAYER
 
 
-const boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
-const girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
+let boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
+let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
 
 //start player
 function start_player(gameObject){
@@ -113,11 +113,16 @@ function update_boy(gameObject){
     const moveSpeed = 3;
     
     // Player: move and jump
-    if(get_key("A")){
+    while(get_key("A")){
+        boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
+        set_scale(boy, 0.5, 0.5, 1);
         translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
     }
-    if(get_key("D")){
+    while(get_key("D")){
+        boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyright.png');
+        set_scale(boy, 0.5, 0.5, 1);
         translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
+        
     }
     if(get_key("W") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
         add_impulse_force(gameObject, 0, 5, 0);
