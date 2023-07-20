@@ -163,6 +163,7 @@ function red_touch(self,other){
 
 function blue_touch(self,other){
     if(same_gameobject(other, bluewater)){
+        const fall_action = create_audio("https://raw.githubusercontent.com/lv0senku/Fireboy-and-Watergirl/master/assets/audio/Death.mp3", 1);
         set_position(self, -9, -4, 0);
     }
 }
