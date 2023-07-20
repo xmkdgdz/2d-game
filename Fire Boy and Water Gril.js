@@ -69,14 +69,16 @@ const start_wall2=(gameObject) => {set_position(gameObject, -8, -1.8, 0);set_sca
 set_start(wall2,start_wall2);
 
 
-function walls
-const wall3=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall3=(gameObject) => {set_position(gameObject, -6, 0, 0);set_scale(gameObject,0.5,1,0);};
-set_start(wall3,start_wall3);
-
-const wall4=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall4=(gameObject) => {set_position(gameObject, 3, -0.2, 0);set_scale(gameObject,0.5,1,0);};
-set_start(wall4,start_wall4);
+function walls(){
+    let w=[];
+    for(let i=0;i<4;i=i+1){
+        w[i]=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
+        set_position(w[i], -6+i*3, 0, 0);
+        set_scale(w[i],0.5,1,0);
+    }
+    
+}
+walls();
 
 const wall5=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
 const start_wall5=(gameObject) => {set_position(gameObject, 7.4, 1.2, 0);set_scale(gameObject,1.5,1,0);};
