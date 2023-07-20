@@ -93,10 +93,6 @@ const start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 0);set_sc
 set_start(girldoor,start_girldoor);
 
 
-//INTERACTION
-
-
-
 
 //PLAYER
 
@@ -155,3 +151,13 @@ set_start(boy,start_player);
 set_start(girl,start_player);
 set_update(boy,update_boy);
 set_update(girl,update_girl);
+
+
+//INTERACTION
+function red_touch(gameObject){
+    
+}
+
+
+on_collision_enter(boy,red_touch);
+
