@@ -51,9 +51,14 @@ const wall1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-gam
 const start_wall1=(gameObject) => {set_position(gameObject, 6, -3.5, 0);set_scale(gameObject,2,1,0);};
 set_start(wall1,start_wall1);
 
-const water=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/water.png');
-const start_water=(gameObject) => {set_position(gameObject, 0, -2.2, 0);set_scale(gameObject,0.5,1,0);};
-set_start(water,start_water);
+const bluewater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/bluewater.png');
+const start_bluewater=(gameObject) => {set_position(gameObject, 0, -2.2, -1);set_scale(gameObject,0.4,0.8,0);};
+set_start(bluewater,start_bluewater);
+
+const redwater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/redwater.png');
+const start_redwater=(gameObject) => {set_position(gameObject, -2.5, -2.2, -1);set_scale(gameObject,0.5,1,0);};
+set_start(redwater,start_redwater);
+
 
 const wall2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
 const start_wall2=(gameObject) => {set_position(gameObject, -5, -1.8, 0);set_scale(gameObject,0.5,3,0);};
