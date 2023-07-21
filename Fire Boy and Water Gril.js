@@ -124,7 +124,7 @@ function update_boy(gameObject){
     
     }
     if(get_key("D")){
-       /const N=get_position(gameObject);
+        const N=get_position(gameObject);
         destroy(gameObject);
         set_position(gameObject,N[0],N[1],N[2]);
         let gameObject=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
