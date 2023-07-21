@@ -172,7 +172,7 @@ function blue_touch(self,other){
 }
 
 function reddoor_touch(self,other){
-    if(same_gameobject(other, redwater)){
+    if(same_gameobject(other, girldoor)){
         
     }
 }
