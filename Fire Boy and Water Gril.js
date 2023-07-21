@@ -170,22 +170,8 @@ function blue_touch(self,other){
         set_position(self, -9, -4, 0);
     }
 }
-
-function reddoor_touch(self,other){
-    if(same_gameobject(other, girldoor)){
-        
-    }
-}
-
-// function bluedoor_touch(self,other){
-//     if(same_gameobject(other, bluewater)){
-//         set_position(self, -9, -4, 0);
-//     }
-// }
-
-
-on_collision_stay(boy,reddoor_touch);
-on_collision_stay(girl,bluedoor_touch);
+on_collision_enter(girl,red_touch);
+on_collision_enter(boy,blue_touch);
 
 
 
