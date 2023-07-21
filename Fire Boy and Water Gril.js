@@ -180,7 +180,7 @@ function update_girl(gameObject){
     if(distance < 0.05){ 
         destroy(girl);
         girldoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
-        start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+        start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 0);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
         set_start(girldoor, start_girldoor);
         // wingirl=true;
     }
