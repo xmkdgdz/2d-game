@@ -170,8 +170,8 @@ function blue_touch(self,other){
         set_position(self, -9, -4, 0);
     }
 }
-on_collision_enter(girl,red_touch);
-on_collision_enter(boy,blue_touch);
+on_collision_enter(boy,red_touch);
+on_collision_enter(girl,blue_touch);
 
 
 
