@@ -85,11 +85,11 @@ const start_wall5=(gameObject) => {set_position(gameObject, 7.4, 1.2, 0);set_sca
 set_start(wall5,start_wall5);
 
 let boydoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boydoor.png');
-let start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+const start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
 set_start(boydoor,start_boydoor);
 
 let girldoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/girldoor.png');
-let start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+const start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
 set_start(girldoor,start_girldoor);
 
 
@@ -146,6 +146,7 @@ function update_boy(gameObject){
        //set_position(gameObject, -9, -4, 0); 
        destroy(boy);
          boydoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
+         //set_position(boydoor, 8.5, 2, 1);
         set_start(boydoor, start_boydoor);
         //winboy=true;
     }
@@ -179,7 +180,7 @@ function update_girl(gameObject){
     if(distance <= 0.05){ 
         destroy(girl);
         girldoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
-        
+        //set_position(girldoor, 8.5, 2, 1);
         set_start(girldoor, start_girldoor);
         // wingirl=true;
     }
