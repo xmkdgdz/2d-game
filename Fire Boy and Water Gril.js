@@ -216,7 +216,7 @@ on_collision_enter(boy,blue_touch);
 function wall_touch(self,other){
     let wall2Position=get_position(wall2);
     if(same_gameobject(other,wall2)&&wall2Position[1]<2){
-        const moveSpeed = 4;
+        const moveSpeed = 3;
         translate_world(wall2, 0, delta_time() * moveSpeed, 0);
         set_rotation_euler(wall2, 0, 0, 0);
     }
