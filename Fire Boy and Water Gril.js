@@ -142,7 +142,7 @@ function update_boy(gameObject){
     const boydoorPosition = get_position(boydoor);
     let distance = math_abs(boyPosition[0] - boydoorPosition[0]);
     
-    if(distance <= 0.02){ 
+    if(distance <= 0.05){ 
        //set_position(gameObject, -9, -4, 0); 
        destroy(boy);
          boydoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
