@@ -23,7 +23,7 @@ init_unity_academy_2d();
 //MAP
 
 //start basic map
-const background=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/background.png');
+const background=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/background.jpg');
 const ground1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
 const ground2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
 const ground3=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground2.png');
