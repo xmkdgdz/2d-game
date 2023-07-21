@@ -216,17 +216,24 @@ on_collision_enter(boy,blue_touch);
 function wall_touch(self,other){
     let wall2Position=get_position(wall2);
     if(same_gameobject(other,wall2)&&wall2Position[1]<2){
-        const moveSpeed = 1;
+        const moveSpeed = 2;
         translate_world(wall2, 0, delta_time() * moveSpeed, 0);
         set_rotation_euler(wall2, 0, 0, 0);
     }
 }
 
-
 on_collision_stay(boy,wall_touch);
 on_collision_stay(girl,wall_touch);
 
-
+function update_wall(gameObject){
+    let wall2Position=get_position(wall2);
+    if(wall2Position[1]>-1.8){
+        const moveSpeed = -1;
+        translate_world(wall2, 0, delta_time() * moveSpeed, 0);
+        set_rotation_euler(wall2, 0, 0, 0);
+    }
+}
+set_update(wall2,update_wall);
 
 
 
