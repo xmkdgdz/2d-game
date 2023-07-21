@@ -99,10 +99,9 @@ set_start(girldoor,start_girldoor);
 
 let boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
 let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
-
 //start player
 function start_player(gameObject){
-    set_position(gameObject, -9, -4, 0);
+    set_position(gameObject, 5, 2, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
     apply_rigidbody(gameObject);
 }
@@ -129,6 +128,22 @@ function update_boy(gameObject){
     }
 
     set_rotation_euler(gameObject, 0, 0, 0);
+    // Check if boy is close to boydoor
+    const boyPosition = get_position(gameObject);
+    const boydoorPosition = get_position(boydoor);
+    let distance = math_abs(boyPosition[0] - boydoorPosition[0]);
+    
+    if(distance <= 0.02){ 
+       //set_position(gameObject, -9, -4, 0); 
+       destroy(boy);
+         boydoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
+    set_start(boydoor, start_boydoor);
+    }
+       
+    
+   
+    
+
     
     
 }
@@ -148,8 +163,21 @@ function update_girl(gameObject){
     }
 
     set_rotation_euler(gameObject, 0, 0, 0);
+    // Check if girl is close to boydoor
+    const girlPosition = get_position(gameObject);
+    const girldoorPosition = get_position(girldoor);
+    let distance = math_abs(girlPosition[0] - girldoorPosition[0]);
     
+    if(distance <= 0.05){ 
+        destroy(girl);
+       //set_position(gameObject, -9, -4, 0); 
+        girldoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
+        start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 0);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+        set_start(girldoor, start_girldoor);
+    }
     
+}
+
 }
 
 set_start(boy,start_player);
