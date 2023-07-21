@@ -214,10 +214,10 @@ on_collision_enter(girl,red_touch);
 on_collision_enter(boy,blue_touch);
 
 function wall_touch(self,other){
-    if(same_gameobject(other,self){
+    if(same_gameobject(other,wall2)){
         const moveSpeed = 1;
-        translate_world(self, 0, delta_time() * moveSpeed, 0);
-        set_rotation_euler(self, 0, 0, 0);
+        translate_world(wall2, 0, delta_time() * moveSpeed, 0);
+        set_rotation_euler(wall2, 0, 0, 0);
     }
 }
 
