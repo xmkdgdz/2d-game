@@ -65,7 +65,7 @@ set_start(wall6,start_wall6);
 
 
 const wall2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const start_wall2=(gameObject) => {set_position(gameObject, -8, -1.8, 0);set_scale(gameObject,0.5,3,0);};
+const start_wall2=(gameObject) => {set_position(gameObject, -8.5, -1.8, 0);set_scale(gameObject,0.5,1,0);};
 set_start(wall2,start_wall2);
 
 
@@ -73,7 +73,7 @@ function walls(){
     let w=[];
     for(let i=0;i<4;i=i+1){
         w[i]=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-        set_position(w[i], -6+i*3, 0, 0);
+        set_position(w[i], -6+i*3, 2, 0);
         set_scale(w[i],0.5,1,0);
     }
     
@@ -213,6 +213,16 @@ function blue_touch(self,other){
 on_collision_enter(girl,red_touch);
 on_collision_enter(boy,blue_touch);
 
+function update_wall(gameObject){
+    if(same_gameobject(boy, gameObject)||same_gameobject(girl, gameObject)){
+        const moveSpeed = 1;
+        translate_world(gameObject, 0, delta_time() * moveSpeed, 0);
+        set_rotation_euler(gameObject, 0, 0, 0);
+    }
+
+    
+
+}
 
 
 
