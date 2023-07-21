@@ -219,10 +219,9 @@ function update_wall(gameObject){
         translate_world(gameObject, 0, delta_time() * moveSpeed, 0);
         set_rotation_euler(gameObject, 0, 0, 0);
     }
-
-    
-
 }
+
+set_update(wall2,update_wall);
 
 
 
