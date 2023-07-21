@@ -106,7 +106,8 @@ function start_player(gameObject){
     set_scale(gameObject, 0.5, 0.5, 1);
     apply_rigidbody(gameObject);
 }
-let winboy=false;let wingirl=false;
+let winboy=false;
+let wingirl=false;
 //player move
 function update_boy(gameObject){
     
@@ -114,12 +115,14 @@ function update_boy(gameObject){
     
     // Player: move and jump
     if(get_key("A")){
-        //boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
+        // boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
+        // start_player(boy,start_player);
         set_scale(boy, 0.5, 0.5, 1);
         translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
+    
     }
     if(get_key("D")){
-        //boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyright.png');
+        boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyright.png');
         set_scale(boy, 0.5, 0.5, 1);
         translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
         
@@ -141,9 +144,9 @@ function update_boy(gameObject){
     set_start(boydoor, start_boydoor);
     winboy=true;
     }
-    if(winboy&&wingirl){
+    
         gui_label('You win',0,0,5);
-    }
+    
       
     
     
@@ -182,9 +185,9 @@ function update_girl(gameObject){
         set_start(girldoor, start_girldoor);
         wingirl=true;
     }
-    if(winboy&&wingirl){
-        gui_label('You win',0,0,5);
-    }
+    // if(winboy&&wingirl){
+    //     gui_label('You win',0,0,5);
+    // }
     
 }
 
