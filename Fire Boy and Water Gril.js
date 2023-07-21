@@ -85,11 +85,11 @@ const start_wall5=(gameObject) => {set_position(gameObject, 7.4, 1.2, 0);set_sca
 set_start(wall5,start_wall5);
 
 const boydoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boydoor.png');
-const start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject)};
+const start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
 set_start(boydoor,start_boydoor);
 
 const girldoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/girldoor.png');
-const start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject)};
+const start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
 set_start(girldoor,start_girldoor);
 
 
