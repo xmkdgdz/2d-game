@@ -213,15 +213,16 @@ function blue_touch(self,other){
 on_collision_enter(girl,red_touch);
 on_collision_enter(boy,blue_touch);
 
-function update_wall(gameObject){
-    if(same_gameobject(boy, gameObject)||same_gameobject(girl, gameObject)){
+function wall_touch(self,other){
+    if(same_gameobject(other,self){
         const moveSpeed = 1;
-        translate_world(gameObject, 0, delta_time() * moveSpeed, 0);
-        set_rotation_euler(gameObject, 0, 0, 0);
+        translate_world(self, 0, delta_time() * moveSpeed, 0);
+        set_rotation_euler(self, 0, 0, 0);
     }
 }
 
-set_update(wall2,update_wall);
+on_collision_stay(boy,wall_touch);
+on_collision_stay(girl,wall_touch);
 
 
 
