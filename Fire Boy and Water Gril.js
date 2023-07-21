@@ -31,7 +31,7 @@ import {init_unity_academy_3d, init_unity_academy_2d, set_start, set_update,
     
     function start_background(gameObject) {
         remove_collider_components(gameObject);
-        set_position(gameObject, 0, 0, 1);
+        set_position(gameObject, 0, 0, 3);
         set_scale(gameObject,2,2,0);
     }
     
@@ -47,23 +47,58 @@ import {init_unity_academy_3d, init_unity_academy_2d, set_start, set_update,
     set_start(ground4,start_ground4);
     
     //start special map
-    const 
+    const wall1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
+    const start_wall1=(gameObject) => {set_position(gameObject, 6, -3.7, 0);set_scale(gameObject,2,1,0);};
+    set_start(wall1,start_wall1);
+    
+    const bluewater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/bluewater2.png');
+    const start_bluewater=(gameObject) => {set_position(gameObject, 0, -2.1, -1);set_scale(gameObject,0.4,1,0);};
+    set_start(bluewater,start_bluewater);
+    
+    const redwater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/redwater.png');
+    const start_redwater=(gameObject) => {set_position(gameObject, -4, -2.1, -1);set_scale(gameObject,0.4,1,0);};
+    set_start(redwater,start_redwater);
+    
+    const wall6=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
+    const start_wall6=(gameObject) => {set_position(gameObject, -3, -2.3, 0);set_scale(gameObject,3,1,0);};
+    set_start(wall6,start_wall6);
     
     
+    const wall2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
+    const start_wall2=(gameObject) => {set_position(gameObject, -8, -1.8, 0);set_scale(gameObject,0.5,3,0);};
+    set_start(wall2,start_wall2);
     
     
+    function walls(){
+        let w=[];
+        for(let i=0;i<4;i=i+1){
+            w[i]=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
+            set_position(w[i], -6+i*3, 0, 0);
+            set_scale(w[i],0.5,1,0);
+        }
+        
+    }
+    walls();
     
+    const wall5=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
+    const start_wall5=(gameObject) => {set_position(gameObject, 7.4, 1.2, 0);set_scale(gameObject,1.5,1,0);};
+    set_start(wall5,start_wall5);
     
-    //INTERACTION
+    const boydoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boydoor.png');
+    const start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+    set_start(boydoor,start_boydoor);
     
+    const girldoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/girldoor.png');
+    const start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+    set_start(girldoor,start_girldoor);
     
     
     
     //PLAYER
     
     
-    const boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
-    const girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
+    let boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
+    let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
     
     //start player
     function start_player(gameObject){
@@ -79,10 +114,15 @@ import {init_unity_academy_3d, init_unity_academy_2d, set_start, set_update,
         
         // Player: move and jump
         if(get_key("A")){
+            //boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
+            set_scale(boy, 0.5, 0.5, 1);
             translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
         }
         if(get_key("D")){
+            //boy=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyright.png');
+            set_scale(boy, 0.5, 0.5, 1);
             translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
+            
         }
         if(get_key("W") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
             add_impulse_force(gameObject, 0, 5, 0);
@@ -118,33 +158,20 @@ import {init_unity_academy_3d, init_unity_academy_2d, set_start, set_update,
     set_update(girl,update_girl);
     
     
+    //INTERACTION
+    function red_touch(self,other){
+        if(same_gameobject(other, redwater)){
+            set_position(self, -9, -4, 0);
+        }
+    }
     
-    // const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
-    // const start_ground1 = (gameObject) => set_position(gameObject, 3, -1, 0);
-    // const start_ground2 = (gameObject) => set_position(gameObject, 6, 0, 0);
-    // const start_wall1 = (gameObject) => {
-    //     set_position(gameObject, -6, 1.8, 0);
-    //     set_rotation_euler(gameObject, 0, 0, 90);
-    // };
-    // const start_wall2 = (gameObject) => {
-    //     set_position(gameObject, 8.75, 1.6, 0);
-    //     set_rotation_euler(gameObject, 0, 0, 90);
-    // };
-    
-    
-    // const start_slope = (gameObject) =>{
-    //     set_position(gameObject, -4, -1, 0);
-    //     set_rotation_euler(gameObject, 0, 0, -10);
-    // };
-    
-    // const start_mystery_box = (gameObject) =>{
-    //     set_position(gameObject, 1, 1.5, 0);
-    // };
-    
-    // const start_mushroom = (gameObject) =>{
-    //     set_position(gameObject, 1, 2.5, 0);
-    //     apply_rigidbody(gameObject);
-    // };
+    function blue_touch(self,other){
+        if(same_gameobject(other, bluewater)){
+            set_position(self, -9, -4, 0);
+        }
+    }
+    on_collision_enter(girl,red_touch);
+    on_collision_enter(boy,blue_touch);
     
     
     
@@ -152,22 +179,3 @@ import {init_unity_academy_3d, init_unity_academy_2d, set_start, set_update,
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // set_start(ground, start_ground);
-    // set_start(ground1, start_ground1);
-    // set_start(ground2, start_ground2);
-    // set_start(wall1, start_wall1);
-    // set_start(wall2, start_wall2);
-    // set_start(slope, start_slope);
-    // set_start(mystery_box, start_mystery_box);
-    // set_start(mario, start_player);
-    // set_update(mario, update_player);
-    // on_collision_enter(mario, marioOnCollisionEnter);
