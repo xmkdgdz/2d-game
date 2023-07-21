@@ -15,7 +15,7 @@ get_scale, set_scale, play_animator_state, add_impulse_force,
 apply_rigidbody, get_angular_velocity, get_mass, get_velocity,
 set_angular_velocity, set_mass, set_use_gravity ,set_velocity,
 on_collision_enter, on_collision_stay, on_collision_exit,
-get_main_camera_following_target,remove_collider_components } from "unity_academy";
+get_main_camera_following_target,remove_collider_components,gui_label } from "unity_academy";
 
 init_unity_academy_2d();
 
@@ -101,11 +101,12 @@ let boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/
 let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
 //start player
 function start_player(gameObject){
-    set_position(gameObject,  -9, -4, 0);
+    //set_position(gameObject,  -9, -4, 0);
+    set_position(gameObject,  7, 3, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
     apply_rigidbody(gameObject);
 }
-
+let winboy=false;let wingirl=false;
 //player move
 function update_boy(gameObject){
     
@@ -138,8 +139,13 @@ function update_boy(gameObject){
        destroy(boy);
          boydoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
     set_start(boydoor, start_boydoor);
+    winboy=true;
     }
-       
+    if(winboy&&wingirl){
+        gui_label('You win',0,0,5);
+    }
+      
+    
     
    
     
@@ -174,6 +180,10 @@ function update_girl(gameObject){
         girldoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
         
         set_start(girldoor, start_girldoor);
+        wingirl=true;
+    }
+    if(winboy&&wingirl){
+        gui_label('You win',0,0,5);
     }
     
 }
