@@ -20,6 +20,22 @@ get_main_camera_following_target,remove_collider_components,gui_label } from "un
 init_unity_academy_2d();
 
 
+
+//begin
+let background1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/background.jpg');
+let start_background1=(gameObject) => {set_position(gameObject, 0, 0, -1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+set_start(background1,start_background1);
+function update_background1(gameObject){
+    if(get_key("Q")){
+        destroy(background1);
+    } else {
+        
+    }
+}
+set_update(background1,update_background1);
+
+
+
 //MAP
 
 //start basic map
