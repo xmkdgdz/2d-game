@@ -23,7 +23,7 @@ init_unity_academy_2d();
 
 //begin
 let begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/begin.jpg');
-let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -5);set_scale(gameObject,1,1,0);remove_collider_components(gameObject);};
 set_start(begin,start_begin);
 function update_begin(gameObject){
     if(get_key("Q")){
