@@ -22,17 +22,15 @@ init_unity_academy_2d();
 
 
 //begin
-let background1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/background.jpg');
-let start_background1=(gameObject) => {set_position(gameObject, 0, 0, -1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
-set_start(background1,start_background1);
-function update_background1(gameObject){
+let begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/begin.jpg');
+let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+set_start(begin,start_begin);
+function update_begin(gameObject){
     if(get_key("Q")){
-        destroy(background1);
-    } else {
-        
-    }
+        destroy(begin);
+    } 
 }
-set_update(background1,update_background1);
+set_update(begin,update_begin);
 
 
 
