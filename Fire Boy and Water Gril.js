@@ -15,7 +15,7 @@ get_scale, set_scale, play_animator_state, add_impulse_force,
 apply_rigidbody, get_angular_velocity, get_mass, get_velocity,
 set_angular_velocity, set_mass, set_use_gravity ,set_velocity,
 on_collision_enter, on_collision_stay, on_collision_exit,
-get_main_camera_following_target,remove_collider_components,gui_label } from "unity_academy";
+get_main_camera_following_target,remove_collider_components,gui_label,gui_button } from "unity_academy";
 
 init_unity_academy_2d();
 
@@ -26,9 +26,7 @@ let begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/
 let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -5);set_scale(gameObject,2.3,1.3,0);remove_collider_components(gameObject);};
 set_start(begin,start_begin);
 function update_begin(gameObject){
-    if(get_key("Q")){
-        destroy(begin);
-    } 
+    gui_button("play",1000,300,()=>destroy(gameObject));
 }
 set_update(begin,update_begin);
 
