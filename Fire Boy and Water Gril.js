@@ -162,8 +162,6 @@ function update_boy(gameObject){
         set_start(boydoor, start_boydoor);
         //winboy=true;
     }
-    
-    //gui_label('You win',0,0,5);
 }
 
 
