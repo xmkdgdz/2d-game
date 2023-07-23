@@ -113,8 +113,8 @@ let boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/
 let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
 //start player
 function start_player(gameObject){
-    set_position(gameObject,  -9, -4, 0);
-    //set_position(gameObject,  7, 3, 0);
+    //set_position(gameObject,  -9, -4, 0);
+    set_position(gameObject,  7, 3, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
     apply_rigidbody(gameObject);
 }
@@ -155,10 +155,9 @@ function update_boy(gameObject){
     let distance = math_abs(boyPosition[0] - boydoorPosition[0]);
     
     if(distance < 0.05){ 
-       //set_position(gameObject, -9, -4, 0); 
        destroy(boy);
          boydoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
-         //set_position(boydoor, 8.5, 2, 1);
+         start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
         set_start(boydoor, start_boydoor);
         //winboy=true;
     }
