@@ -191,15 +191,21 @@ function update_boy(gameObject){
     
     // Player: move and jump
     if(get_key("A")){
-        
-        gameObject=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
-        
         translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
+        // const N=get_position(gameObject);
+        // destroy(gameObject);
+        // gameObject=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
+        // set_position(gameObject,N[0],N[1],N[2]);
+        // set_scale(gameObject, 0.5, 0.5, 1);
+        
     
     }
     if(get_key("D")){
-        
-        gameObject=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
+        // const N=get_position(gameObject);
+        // destroy(gameObject);
+        // set_position(gameObject,N[0],N[1],N[2]);
+        // let gameObject=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
+        //set_scale(gameObject, 0.5, 0.5, 1);
         translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
         
     }
