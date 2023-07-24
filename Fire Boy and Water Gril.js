@@ -50,10 +50,19 @@ function update_end(gameObject){
     if(wingirl&&winboy){
         set_position(end, 0, 0, -8);
         set_scale(end,1.2,1,0);
-        //gui_button("exit",800,450,50,()=>destroy(gameObject));
+        gui_button("replay",800,450,50,replay);
     }
 }
 set_update(end,update_end);
+
+function replay(){
+    winboy=false;
+    wingirl=false;
+    set_start(boy,start_player);
+    set_start(girl,start_player);
+    set_start(begin,start_begin);
+    set_start(instruction,start_instruction);
+}
 
 
 //MAP
