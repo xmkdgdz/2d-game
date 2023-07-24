@@ -30,7 +30,7 @@ set_update(begin,update_begin);
 
 let instruction=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/instruction2.png');
 let start_instruction=(gameObject) => {set_position(gameObject, 0, 0, -8);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
-set_start(begin,start_instruction);
+set_start(begin,start_instruction2);
 function update_instruction(gameObject){
     if(get_key("F")){
         destroy(gameObject);
