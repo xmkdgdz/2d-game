@@ -224,10 +224,6 @@ function update_boy(gameObject){
         winboy=true;
     }
 }
-    
-
-
-
 
 function update_girl(gameObject){
     
