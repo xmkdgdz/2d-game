@@ -220,7 +220,7 @@ function update_boy(gameObject){
     const boydoorv=vector3(boydoorPosition[0],boydoorPosition[1],boydoorPosition[2]);
     let distance = point_distance(boyv,boydoorv);
     
-    if(distance < 2){ 
+    if(distance < 1.2){ 
        destroy(boy);
          boydoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
          start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 0);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
@@ -252,7 +252,7 @@ function update_girl(gameObject){
     const girldoorv=vector3(girldoorPosition[0],girldoorPosition[1],girldoorPosition[2]);
     let distance = point_distance(girlv,girldoorv);
     
-    if(distance < 2){ 
+    if(distance < 1.2){ 
         destroy(girl);
         girldoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
         start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 0);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
