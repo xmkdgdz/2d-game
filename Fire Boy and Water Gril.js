@@ -217,7 +217,7 @@ function update_boy(gameObject){
     const boyPosition = get_position(gameObject);
     const boyv=vector3(boyPosition[0],boyPosition[1],boyPosition[2]);
     const boydoorPosition = get_position(boydoor);
-    const doorv=(boydoorPosition[0],boydoorPosition[1],boydoorPosition[2]);
+    const doorv=vector3(boydoorPosition[0],boydoorPosition[1],boydoorPosition[2]);
     let distance = math_abs(point_distance(boyv,doorv));
     
     if(distance < 0.05){ 
@@ -249,7 +249,7 @@ function update_girl(gameObject){
     const girlPosition = get_position(gameObject);
     const girlv=vector3(girlPosition[0],girlPosition[1],girlPosition[2]);
     const girldoorPosition = get_position(girldoor);
-    const doorv=(girldoorPosition[0],girldoorPosition[1],girldoorPosition[2]);
+    const doorv=vector3(girldoorPosition[0],girldoorPosition[1],girldoorPosition[2]);
     let distance = math_abs(point_distance(girlv,girldoorv));
     
     if(distance < 0.05){ 
