@@ -250,7 +250,7 @@ function update_girl(gameObject){
     const girlv=vector3(girlPosition[0],girlPosition[1],girlPosition[2]);
     const girldoorPosition = get_position(girldoor);
     const doorv=vector3(girldoorPosition[0],girldoorPosition[1],girldoorPosition[2]);
-    let distance = math_abs(point_distance(girlv,girldoorv));
+    let distance = math_abs(point_distance(girlv,doorv));
     
     if(distance < 0.05){ 
         destroy(girl);
