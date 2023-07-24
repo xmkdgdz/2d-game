@@ -27,7 +27,7 @@ let begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/
 let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -10);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
 set_start(begin,start_begin);
 function update_begin(gameObject){
-    gui_button("play",800,450,50,()=>destroy(gameObject));
+    gui_button("play",800,450,50,()=>set_position(gameObject, 0, 0, 10));
 }
 set_update(begin,update_begin);
 
@@ -36,7 +36,7 @@ let start_instruction=(gameObject) => {set_position(gameObject, 0, 0, -8);set_sc
 set_start(instruction,start_instruction);
 function update_instruction(gameObject){
     if(get_key("F")){
-        destroy(gameObject);
+        set_position(gameObject, 0, 0, 10);
     }
 }
 set_update(instruction,update_instruction);
