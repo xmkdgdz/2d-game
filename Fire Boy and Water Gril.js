@@ -176,8 +176,8 @@ let boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/
 let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
 //start player
 function start_player(gameObject){
-    set_position(gameObject,  -9, -4, 0);
-    //set_position(gameObject,  7, 3, 0);
+    //set_position(gameObject,  -9, -4, 0);
+    set_position(gameObject,  7, 3, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
     apply_rigidbody(gameObject);
 }
@@ -217,8 +217,8 @@ function update_boy(gameObject){
     const boyPosition = get_position(gameObject);
     const boyv=vector3(boyPosition[0],boyPosition[1],boyPosition[2]);
     const boydoorPosition = get_position(boydoor);
-    const doorv=vector3(boydoorPosition[0],boydoorPosition[1],boydoorPosition[2]);
-    let distance = math_abs(point_distance(boyv,doorv));
+    const boydoorv=vector3(boydoorPosition[0],boydoorPosition[1],boydoorPosition[2]);
+    let distance = math_abs(point_distance(boyv,boydoorv));
     
     if(distance < 0.05){ 
        destroy(boy);
@@ -249,8 +249,8 @@ function update_girl(gameObject){
     const girlPosition = get_position(gameObject);
     const girlv=vector3(girlPosition[0],girlPosition[1],girlPosition[2]);
     const girldoorPosition = get_position(girldoor);
-    const doorv=vector3(girldoorPosition[0],girldoorPosition[1],girldoorPosition[2]);
-    let distance = math_abs(point_distance(girlv,doorv));
+    const girldoorv=vector3(girldoorPosition[0],girldoorPosition[1],girldoorPosition[2]);
+    let distance = math_abs(point_distance(girlv,girldoorv));
     
     if(distance < 0.05){ 
         destroy(girl);
