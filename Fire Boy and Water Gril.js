@@ -87,8 +87,8 @@ function update_end(gameObject){
 function replay(){
     winboy=false;
     wingirl=false;
-    boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
-    girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
+    //boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
+    //girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
     
     destroy(boydoor);
     boydoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boydoor.png');
@@ -251,7 +251,7 @@ function update_boy(gameObject){
     
     if(distance < 1.2){ 
         play_concurrently(r0);
-       destroy(boy);
+       set_position(boy,0,0,10);
        destroy(boydoor);
         boydoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
          //start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 0);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
@@ -286,7 +286,7 @@ function update_girl(gameObject){
     
     if(distance < 1.2){ 
         play_concurrently(r0);
-        destroy(girl);
+        set_position(girl,0,0,10);
         destroy(girldoor);
         girldoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
         //start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 0);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
