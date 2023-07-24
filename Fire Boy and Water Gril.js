@@ -21,7 +21,7 @@ init_unity_academy_2d();
 
 //begin
 let begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/begin.png');
-let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -5);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
+let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -10);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
 set_start(begin,start_begin);
 function update_begin(gameObject){
     gui_button("play",800,450,50,()=>destroy(gameObject));
@@ -29,10 +29,10 @@ function update_begin(gameObject){
 set_update(begin,update_begin);
 
 let instruction=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/instruction2.png');
-let start_instruction=(gameObject) => {set_position(gameObject, 0, 0, -4);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
+let start_instruction=(gameObject) => {set_position(gameObject, 0, 0, -8);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
 set_start(begin,start_instruction);
 function update_instruction(gameObject){
-    if(get_key("F"));{
+    if(get_key("F")){
         destroy(gameObject);
     }
 }
