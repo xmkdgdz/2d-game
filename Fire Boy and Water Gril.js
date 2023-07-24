@@ -78,8 +78,6 @@ remove_collider_components(end);
         
 function update_end(gameObject){
     if(wingirl&&winboy){
-        destroy(boydoor);
-        destroy(girldoor);
         set_position(end, 0, 0, -8);
         set_scale(end,1.2,1,0);
         //gui_button("replay",800,450,50,replay);
