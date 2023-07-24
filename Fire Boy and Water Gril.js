@@ -19,9 +19,7 @@ get_main_camera_following_target,remove_collider_components,gui_label,gui_button
 vector3,get_x,get_y,get_z
 } from "unity_academy";
 
-
 import {trombone,piano,play_concurrently,consecutively,simultaneously} from "sound";
-
 
 init_unity_academy_2d();
 
@@ -84,7 +82,7 @@ function update_end(gameObject){
         destroy(girldoor);
         set_position(end, 0, 0, -8);
         set_scale(end,1.2,1,0);
-        gui_button("replay",800,450,50,replay);
+        //gui_button("replay",800,450,50,replay);
     }
 }
 
