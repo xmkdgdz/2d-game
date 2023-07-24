@@ -215,8 +215,9 @@ function update_boy(gameObject){
     set_rotation_euler(gameObject, 0, 0, 0);
     // Check if boy is close to boydoor
     const boyPosition = get_position(gameObject);
-    const boy
+    const boyv=vector3(boyPosition[0],boyPosition[1],boyPosition[2]);
     const boydoorPosition = get_position(boydoor);
+    const doorv=(boydoorPosition[0],boydoorPosition[1],boydoorPosition[2]);
     let distance = math_abs(point_distance(boyPosition,boydoorPosition));
     
     if(distance < 0.05){ 
