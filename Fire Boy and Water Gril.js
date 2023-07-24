@@ -236,6 +236,7 @@ function update_boy(gameObject){
     }
     if(get_key("W") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
         add_impulse_force(gameObject, 0, 5, 0);
+        play_concurrently(r22);
     }
 
     set_rotation_euler(gameObject, 0, 0, 0);
@@ -247,6 +248,7 @@ function update_boy(gameObject){
     let distance = point_distance(boyv,boydoorv);
     
     if(distance < 1.2){ 
+        play_concurrently(r0);
        destroy(boy);
        destroy(boydoor);
         boydoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
@@ -269,6 +271,7 @@ function update_girl(gameObject){
     }
     if(get_key("I") && math_abs(get_velocity(gameObject)[1]) <= 0.05){
         add_impulse_force(gameObject, 0, 5, 0);
+        play_concurrently(r21);
     }
 
     set_rotation_euler(gameObject, 0, 0, 0);
@@ -280,6 +283,7 @@ function update_girl(gameObject){
     let distance = point_distance(girlv,girldoorv);
     
     if(distance < 1.2){ 
+        play_concurrently(r0);
         destroy(girl);
         destroy(girldoor);
         girldoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
@@ -301,12 +305,14 @@ set_update(girl,update_girl);
 //INTERACTION
 function red_touch(self,other){
     if(same_gameobject(other, redwater)){
+        play_concurrently(simultaneously(list(r2,r3,r4,r5,r6,r7)));
         set_position(self, -9, -4, 0);
     }
 }
 
 function blue_touch(self,other){
     if(same_gameobject(other, bluewater)){
+        play_concurrently(simultaneously(list(r2,r3,r4,r5,r6,r7)));
         set_position(self, -9, -4, 0);
     }
 }
