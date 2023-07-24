@@ -63,18 +63,18 @@ function replay(){
     
     let begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/begin.png');
     let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -10);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
-    set_start(begin,start_begin);
-    set_update(begin,update_begin);
+    // set_start(begin,start_begin);
+    // set_update(begin,update_begin);
     
     let instruction=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/instruction2.png');
     let start_instruction=(gameObject) => {set_position(gameObject, 0, 0, -8);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
-    set_start(instruction,start_instruction);
-    set_update(instruction,update_instruction);
+    // set_start(instruction,start_instruction);
+    // set_update(instruction,update_instruction);
     
     let end=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/end.png');
     set_position(end,0,0,10);
     remove_collider_components(end);
-    set_update(end,update_end);
+    //set_update(end,update_end);
 }
 
 
