@@ -19,7 +19,29 @@ get_main_camera_following_target,remove_collider_components,gui_label,gui_button
 vector3,get_x,get_y,get_z
 } from "unity_academy";
 
+
+import {trombone,piano,play_concurrently,consecutively,simultaneously} from "sound";
+
+
 init_unity_academy_2d();
+
+//bgm
+
+const r21=piano(75,0.5);
+const r22=piano(70,0.5);
+const r0=trombone(20,1);
+const r1=piano(75,2);
+const r2=piano(54,1);
+const r3=piano(53,1);
+const r4=piano(52,1);
+const r5=piano(51,1);
+const r6=piano(50,1);
+const r7=piano(49,1);
+//play_concurrently(simultaneously(list(r2,r3,r4,r5,r6,r7)));   fall
+//play_concurrently(r1);   lift
+//play_concurrently(r0);    door
+//play_concurrently(r21);    jump
+
 
 //begin
 let winboy=false;
@@ -65,7 +87,6 @@ function update_end(gameObject){
         gui_button("replay",800,450,50,replay);
     }
 }
-set_update(end,update_end);
 
 function replay(){
     winboy=false;
@@ -278,6 +299,7 @@ set_update(boy,update_boy);
 set_update(girl,update_girl);
 
 
+
 //INTERACTION
 function red_touch(self,other){
     if(same_gameobject(other, redwater)){
@@ -315,5 +337,5 @@ function update_wall(gameObject){
 }
 set_update(wall2,update_wall);
 
-
+set_update(end,update_end);
 
