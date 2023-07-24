@@ -247,7 +247,7 @@ function update_boy(gameObject){
     
     if(distance < 1.2){ 
         play_concurrently(r0);
-       set_position(boy,0,0,10);
+       set_position(boy,-9,-4,10);
        destroy(boydoor);
         boydoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
          //start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 0);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
@@ -282,7 +282,7 @@ function update_girl(gameObject){
     
     if(distance < 1.2){ 
         play_concurrently(r0);
-        set_position(girl,0,0,10);
+        set_position(girl,-9,-4,10);
         destroy(girldoor);
         girldoor = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/opendoor.png');
         //start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 0);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
