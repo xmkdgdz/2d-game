@@ -176,8 +176,8 @@ let boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/
 let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
 //start player
 function start_player(gameObject){
-    //set_position(gameObject,  -9, -4, 0);
-    set_position(gameObject,  7, 3, 0);
+    set_position(gameObject,  -9, -4, 0);
+    //set_position(gameObject,  7, 3, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
     apply_rigidbody(gameObject);
 }
@@ -191,20 +191,15 @@ function update_boy(gameObject){
     
     // Player: move and jump
     if(get_key("A")){
-        // const N=get_position(gameObject);
-        // destroy(gameObject);
-        // let gameObject=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
-        // set_position(gameObject,N[0],N[1],N[2]);
-        set_scale(gameObject, 0.5, 0.5, 1);
+        
+        gameObject=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
+        
         translate_world(gameObject, -delta_time() * moveSpeed, 0, 0);
     
     }
     if(get_key("D")){
-        // const N=get_position(gameObject);
-        // destroy(gameObject);
-        // set_position(gameObject,N[0],N[1],N[2]);
-        // let gameObject=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
-        set_scale(gameObject, 0.5, 0.5, 1);
+        
+        gameObject=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boyleft.png');
         translate_world(gameObject, delta_time() * moveSpeed, 0, 0);
         
     }
