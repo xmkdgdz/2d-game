@@ -19,8 +19,6 @@ get_main_camera_following_target,remove_collider_components,gui_label,gui_button
 
 init_unity_academy_2d();
 
-
-
 //begin
 let begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/begin.jpg');
 let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -5);set_scale(gameObject,2.3,1.3,0);remove_collider_components(gameObject);};
