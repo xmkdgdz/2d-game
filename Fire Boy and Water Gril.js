@@ -14,7 +14,7 @@ set_position, get_rotation_euler, set_rotation_euler, rotate_world,
 get_scale, set_scale, play_animator_state, add_impulse_force,
 apply_rigidbody, get_angular_velocity, get_mass, get_velocity,
 set_angular_velocity, set_mass, set_use_gravity ,set_velocity,
-on_collision_enter, on_collision_stay, on_collision_exit,
+on_collision_enter, on_collision_stay, on_collision_exit,point_distance,
 get_main_camera_following_target,remove_collider_components,gui_label,gui_button} from "unity_academy";
 
 init_unity_academy_2d();
@@ -214,7 +214,7 @@ function update_boy(gameObject){
     // Check if boy is close to boydoor
     const boyPosition = get_position(gameObject);
     const boydoorPosition = get_position(boydoor);
-    let distance = math_abs(boyPosition[0] - boydoorPosition[0]);
+    let distance = math_abs(point_distance(boyPosition,boydoorPosition));
     
     if(distance < 0.05){ 
        destroy(boy);
@@ -244,7 +244,7 @@ function update_girl(gameObject){
     // Check if girl is close to boydoor
     const girlPosition = get_position(gameObject);
     const girldoorPosition = get_position(girldoor);
-    let distance = math_abs(girlPosition[0] - girldoorPosition[0]);
+    let distance = math_abs(point_distance(girlPosition,girldoorPosition));
     
     if(distance < 0.05){ 
         destroy(girl);
