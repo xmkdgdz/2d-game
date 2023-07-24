@@ -42,12 +42,15 @@ function update_instruction(gameObject){
 set_update(instruction,update_instruction);
 
 
-
+const end=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/end.png');
+set_position(end,0,0,10);
+remove_collider_components(end);
+        
 function update_end(gameObject){
     if(wingirl&&winboy){
-        const end=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/end.png');
-        const start_end=(gameObject) => {set_position(gameObject, 0, 0, -8);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
-        set_start(end,start_end);
+        set_position(end, 0, 0, -8);
+        set_scale(end,1.2,1,0);
+       
     }
 }
 set_update(end,update_end);
