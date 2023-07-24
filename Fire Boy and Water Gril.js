@@ -198,9 +198,9 @@ let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game
 //start player
 function start_player(gameObject){
     //开始
-    //set_position(gameObject,  -9, -4, 0);
+    set_position(gameObject,  -9, -4, 0);
     //终点
-    set_position(gameObject,  6, 3, 0);
+    //set_position(gameObject,  6, 3, 0);
     //电梯
     //set_position(gameObject,  -6, 0, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
