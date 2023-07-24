@@ -80,7 +80,7 @@ function update_end(gameObject){
     if(wingirl&&winboy){
         set_position(end, 0, 0, -8);
         set_scale(end,1.2,1,0);
-        //gui_button("replay",800,450,50,replay);
+        gui_button("replay",800,450,50,replay);
     }
 }
 
@@ -90,13 +90,13 @@ function replay(){
     boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
     girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
     
-    //destroy(boydoor);
+    destroy(boydoor);
     boydoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boydoor.png');
     //start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
     set_start(boydoor,start_boydoor);
 
     
-    //destroy(girldoor);
+    destroy(girldoor);
     girldoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/girldoor.png');
     //start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
     set_start(girldoor,start_girldoor);
@@ -199,8 +199,12 @@ let boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/
 let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
 //start player
 function start_player(gameObject){
-    //set_position(gameObject,  -9, -4, 0);
-    set_position(gameObject,  9, 3, 0);
+    //开始
+    set_position(gameObject,  -9, -4, 0);
+    //终点
+    //set_position(gameObject,  6, 3, 0);
+    //电梯
+    //set_position(gameObject,  -6, 0, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
     apply_rigidbody(gameObject);
 }
@@ -320,6 +324,7 @@ on_collision_enter(boy,blue_touch);
 function wall_touch(self,other){
     let wall2Position=get_position(wall2);
     if(same_gameobject(other,wall2)&&wall2Position[1]<2){
+        //play_concurrently(r1);
         const moveSpeed = 3;
         translate_world(wall2, 0, delta_time() * moveSpeed, 0);
         set_rotation_euler(wall2, 0, 0, 0);
