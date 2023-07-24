@@ -19,59 +19,20 @@ get_main_camera_following_target,remove_collider_components,gui_label,gui_button
 
 init_unity_academy_2d();
 
-
+//begin
 let winboy=false;
 let wingirl=false;
 
-//load picture
 let begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/begin.png');
-let instruction=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/instruction2.png');
-let end=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/end.png');
-
-const background=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/background.jpg');
-const ground1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
-const ground2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
-const ground3=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground2.png');
-const ground4=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground2.png');
-
-const wall1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const bluewater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/bluewater2.png');
-const redwater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/redwater.png');
-const wall6=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const wall5=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-const wall2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-function walls(){
-    let w=[];
-    for(let i=0;i<4;i=i+1){
-        w[i]=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
-        set_position(w[i], -6+i*3, 2, 0);
-        set_scale(w[i],0.5,1,0);
-    }
-    
-}
-walls();
-
-let boydoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boydoor.png');
-let girldoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/girldoor.png');
-let boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
-let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
-
-
-
-//start
 let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -10);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
 set_start(begin,start_begin);
-
-
-
-
 
 function update_begin(gameObject){
     gui_button("play",800,450,50,()=>destroy(gameObject));
 }
 set_update(begin,update_begin);
 
-
+let instruction=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/instruction2.png');
 let start_instruction=(gameObject) => {set_position(gameObject, 0, 0, -8);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
 set_start(instruction,start_instruction);
 function update_instruction(gameObject){
@@ -82,7 +43,7 @@ function update_instruction(gameObject){
 set_update(instruction,update_instruction);
 
 
-
+let end=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/end.png');
 set_position(end,0,0,10);
 remove_collider_components(end);
         
@@ -135,7 +96,11 @@ function replay(){
 //MAP
 
 //start basic map
-
+const background=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/background.jpg');
+const ground1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
+const ground2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
+const ground3=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground2.png');
+const ground4=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground2.png');
 
 function start_background(gameObject) {
     remove_collider_components(gameObject);
@@ -155,39 +120,48 @@ set_start(ground3,start_ground3);
 set_start(ground4,start_ground4);
 
 //start special map
-
+const wall1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
 const start_wall1=(gameObject) => {set_position(gameObject, 6, -3.7, 0);set_scale(gameObject,2,1,0);};
 set_start(wall1,start_wall1);
 
-
+const bluewater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/bluewater2.png');
 const start_bluewater=(gameObject) => {set_position(gameObject, 0, -2.1, -1);set_scale(gameObject,0.4,1,0);};
 set_start(bluewater,start_bluewater);
 
-
+const redwater=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/redwater.png');
 const start_redwater=(gameObject) => {set_position(gameObject, -4, -2.1, -1);set_scale(gameObject,0.4,1,0);};
 set_start(redwater,start_redwater);
 
-
+const wall6=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
 const start_wall6=(gameObject) => {set_position(gameObject, -3, -2.3, 0);set_scale(gameObject,3,1,0);};
 set_start(wall6,start_wall6);
 
 
-
+const wall2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
 const start_wall2=(gameObject) => {set_position(gameObject, -8.5, -1.8, 0);set_scale(gameObject,0.5,1,0);};
 set_start(wall2,start_wall2);
 
 
+function walls(){
+    let w=[];
+    for(let i=0;i<4;i=i+1){
+        w[i]=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
+        set_position(w[i], -6+i*3, 2, 0);
+        set_scale(w[i],0.5,1,0);
+    }
+    
+}
+walls();
 
-
-
+const wall5=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
 const start_wall5=(gameObject) => {set_position(gameObject, 7.4, 1.2, 0);set_scale(gameObject,1.5,1,0);};
 set_start(wall5,start_wall5);
 
-
+let boydoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boydoor.png');
 let start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
 set_start(boydoor,start_boydoor);
 
-
+let girldoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/girldoor.png');
 let start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
 set_start(girldoor,start_girldoor);
 
@@ -196,7 +170,8 @@ set_start(girldoor,start_girldoor);
 //PLAYER
 
 
-
+let boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
+let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
 //start player
 function start_player(gameObject){
     //set_position(gameObject,  -9, -4, 0);
@@ -249,6 +224,10 @@ function update_boy(gameObject){
         winboy=true;
     }
 }
+    
+
+
+
 
 function update_girl(gameObject){
     
