@@ -218,7 +218,7 @@ function update_boy(gameObject){
     const boyv=vector3(boyPosition[0],boyPosition[1],boyPosition[2]);
     const boydoorPosition = get_position(boydoor);
     const boydoorv=vector3(boydoorPosition[0],boydoorPosition[1],boydoorPosition[2]);
-    let distance = math_abs(point_distance(boyv,boydoorv));
+    let distance = point_distance(boyv,boydoorv);
     
     if(distance < 0.05){ 
        destroy(boy);
@@ -245,12 +245,12 @@ function update_girl(gameObject){
     }
 
     set_rotation_euler(gameObject, 0, 0, 0);
-    // Check if girl is close to boydoor
+    // Check if girl is close to girldoor
     const girlPosition = get_position(gameObject);
     const girlv=vector3(girlPosition[0],girlPosition[1],girlPosition[2]);
     const girldoorPosition = get_position(girldoor);
     const girldoorv=vector3(girldoorPosition[0],girldoorPosition[1],girldoorPosition[2]);
-    let distance = math_abs(point_distance(girlv,girldoorv));
+    let distance = point_distance(girlv,girldoorv);
     
     if(distance < 0.05){ 
         destroy(girl);
