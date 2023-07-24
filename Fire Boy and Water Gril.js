@@ -26,6 +26,7 @@ let wingirl=false;
 let begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/begin.png');
 let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -10);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
 set_start(begin,start_begin);
+
 function update_begin(gameObject){
     gui_button("play",800,450,50,()=>destroy(gameObject));
 }
@@ -58,22 +59,37 @@ set_update(end,update_end);
 function replay(){
     winboy=false;
     wingirl=false;
+    boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/boy.png');
+    girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
+        
+    boydoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/boydoor.png');
+    start_boydoor=(gameObject) => {set_position(gameObject, 6.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+    set_start(boydoor,start_boydoor);
+
+    girldoor=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/girldoor.png');
+    start_girldoor=(gameObject) => {set_position(gameObject, 8.5, 2, 1);set_scale(gameObject,0.3,0.3,0);remove_collider_components(gameObject);};
+    set_start(girldoor,start_girldoor);
+    
     set_start(boy,start_player);
     set_start(girl,start_player);
+    set_update(boy,update_boy);
+    set_update(girl,update_girl);
+    
+
     
     begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/begin.png');
     //let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -10);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
     set_start(begin,start_begin);
-    //set_update(begin,update_begin);
+    set_update(begin,update_begin);
     
     instruction=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/instruction2.png');
     //let start_instruction=(gameObject) => {set_position(gameObject, 0, 0, -8);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
     set_start(instruction,start_instruction);
-    //set_update(instruction,update_instruction);
+    set_update(instruction,update_instruction);
     
     
     set_position(end,0,0,10);
-    //set_update(end,update_end);
+    set_update(end,update_end);
 }
 
 
