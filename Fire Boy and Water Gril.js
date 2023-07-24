@@ -27,7 +27,7 @@ let begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/
 let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -10);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
 set_start(begin,start_begin);
 function update_begin(gameObject){
-    gui_button("play",800,450,50,()=>set_position(gameObject, 0, 0, 10));
+    gui_button("play",800,450,50,()=>destroy(gameObject));
 }
 set_update(begin,update_begin);
 
@@ -36,13 +36,13 @@ let start_instruction=(gameObject) => {set_position(gameObject, 0, 0, -8);set_sc
 set_start(instruction,start_instruction);
 function update_instruction(gameObject){
     if(get_key("F")){
-        set_position(gameObject, 0, 0, 10);
+        destroy(gameObject);
     }
 }
 set_update(instruction,update_instruction);
 
 
-const end=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/end.png');
+let end=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/end.png');
 set_position(end,0,0,10);
 remove_collider_components(end);
         
@@ -60,8 +60,21 @@ function replay(){
     wingirl=false;
     set_start(boy,start_player);
     set_start(girl,start_player);
+    
+    let begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/begin.png');
+    let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -10);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
     set_start(begin,start_begin);
+    set_update(begin,update_begin);
+    
+    let instruction=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/instruction2.png');
+    let start_instruction=(gameObject) => {set_position(gameObject, 0, 0, -8);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
     set_start(instruction,start_instruction);
+    set_update(instruction,update_instruction);
+    
+    let end=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/end.png');
+    set_position(end,0,0,10);
+    remove_collider_components(end);
+    set_update(end,update_end);
 }
 
 
