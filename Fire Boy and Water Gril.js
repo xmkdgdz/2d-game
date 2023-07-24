@@ -103,11 +103,7 @@ function replay(){
     
     set_start(boy,start_player);
     set_start(girl,start_player);
-    set_update(boy,update_boy);
-    set_update(girl,update_girl);
-    
 
-    
     begin=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/begin.png');
     //let start_begin=(gameObject) => {set_position(gameObject, 0, 0, -10);set_scale(gameObject,1.2,1,0);remove_collider_components(gameObject);};
     set_start(begin,start_begin);
@@ -200,9 +196,9 @@ let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game
 //start player
 function start_player(gameObject){
     //开始
-    set_position(gameObject,  -9, -4, 0);
+    //set_position(gameObject,  -9, -4, 0);
     //终点
-    //set_position(gameObject,  6, 3, 0);
+    set_position(gameObject,  6, 3, 0);
     //电梯
     //set_position(gameObject,  -6, 0, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
