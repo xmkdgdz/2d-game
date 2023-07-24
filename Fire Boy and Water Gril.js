@@ -179,8 +179,8 @@ let boy = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/
 let girl = instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/girl.png'); 
 //start player
 function start_player(gameObject){
-    set_position(gameObject,  -9, -4, 0);
-    //set_position(gameObject,  7, 3, 0);
+    //set_position(gameObject,  -9, -4, 0);
+    set_position(gameObject,  7, 3, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
     apply_rigidbody(gameObject);
 }
