@@ -128,8 +128,8 @@ function replay(){
 const background=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/background.jpg');
 const ground1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
 const ground2=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground1.png');
-const ground3=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground2.png');
-const ground4=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground2.png');
+//const ground3=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground2.png');
+//const ground4=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/main/images/ground2.png');
 
 function start_background(gameObject) {
     remove_collider_components(gameObject);
@@ -137,16 +137,16 @@ function start_background(gameObject) {
     set_scale(gameObject,2,2,0);
 }
 
-const start_ground1 = (gameObject) => {set_position(gameObject, 0, -5, 0);set_scale(gameObject,2,1,0);};
-const start_ground2 = (gameObject) => {set_position(gameObject, 0, 5, 0);set_scale(gameObject,2,1,0);};
-const start_ground3 = (gameObject) => {set_position(gameObject, -10, 0, 0);set_scale(gameObject,1,2,0);};
-const start_ground4 = (gameObject) => {set_position(gameObject, 10, 0, 0);set_scale(gameObject,1,2,0);};
+const start_ground1 = (gameObject) => {set_position(gameObject, 0, -5, 0);set_scale(gameObject,5,1,0);};
+const start_ground2 = (gameObject) => {set_position(gameObject, 0, 5, 0);set_scale(gameObject,5,1,0);};
+//const start_ground3 = (gameObject) => {set_position(gameObject, -10, 0, 0);set_scale(gameObject,1,2,0);};
+//const start_ground4 = (gameObject) => {set_position(gameObject, 10, 0, 0);set_scale(gameObject,1,2,0);};
 
 set_start(background,start_background);
 set_start(ground1,start_ground1);
 set_start(ground2,start_ground2);
-set_start(ground3,start_ground3);
-set_start(ground4,start_ground4);
+//set_start(ground3,start_ground3);
+//set_start(ground4,start_ground4);
 
 //start special map
 const wall1=instantiate_sprite('https://raw.githubusercontent.com/xmkdgdz/2d-game/master/images/wall.png');
@@ -325,7 +325,7 @@ function wall_touch(self,other){
         //play_concurrently(r1);
         const moveSpeed = 3;
         translate_world(wall2, 0, delta_time() * moveSpeed, 0);
-        set_rotation_euler(wall2, 0, 0, 0);
+       // set_rotation_euler(wall2, 0, 0, 0);
     }
 }
 
@@ -337,7 +337,7 @@ function update_wall(gameObject){
     if(wall2Position[1]>-1.8){
         const moveSpeed = -1;
         translate_world(wall2, 0, delta_time() * moveSpeed, 0);
-        set_rotation_euler(wall2, 0, 0, 0);
+       // set_rotation_euler(wall2, 0, 0, 0);
     }
 }
 set_update(wall2,update_wall);
