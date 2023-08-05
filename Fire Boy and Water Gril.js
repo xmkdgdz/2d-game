@@ -1,3 +1,24 @@
+/*
+
+SWS3012 Structure and Interpretation of Computer Programs
+
+Course project: Fire Boy and Water Girl
+
+Project team members: < enter your team members here >
+
+Resources used:
+
+< Enter any assets or sources here, and their licenses.
+
+Clearly indicate if you have used assets or sources without 
+complying with their licenses.
+
+You will not be penalized if you have: This is for the 
+instructor to decide whether to use your project as a demo 
+of Source Academy. >
+
+*/
+
 // 2D game : Fire Boy and Water Girl
 //
 // Fire Boy:A and D: Walk left and right
@@ -325,7 +346,7 @@ function wall_touch(self,other){
         //play_concurrently(r1);
         const moveSpeed = 3;
         translate_world(wall2, 0, delta_time() * moveSpeed, 0);
-       // set_rotation_euler(wall2, 0, 0, 0);
+       set_rotation_euler(wall2, 0, 0, 0);
     }
 }
 
@@ -337,7 +358,7 @@ function update_wall(gameObject){
     if(wall2Position[1]>-1.8){
         const moveSpeed = -1;
         translate_world(wall2, 0, delta_time() * moveSpeed, 0);
-       // set_rotation_euler(wall2, 0, 0, 0);
+        set_rotation_euler(wall2, 0, 0, 0);
     }
 }
 set_update(wall2,update_wall);
