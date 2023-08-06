@@ -1,3 +1,24 @@
+/*
+
+SWS3012 Structure and Interpretation of Computer Programs
+
+Course project: Fire Boy and Water Girl
+
+Project team members: CHANG MINGYUE  MA JIALU  TANG AIJIA  WU YIJING
+
+Resources used:
+
+< Enter any assets or sources here, and their licenses.
+
+Clearly indicate if you have used assets or sources without 
+complying with their licenses.
+
+You will not be penalized if you have: This is for the 
+instructor to decide whether to use your project as a demo 
+of Source Academy. >
+
+*/
+
 // 2D game : Fire Boy and Water Girl
 //
 // Fire Boy:A and D: Walk left and right
